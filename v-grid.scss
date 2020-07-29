@@ -1,0 +1,117 @@
+// Breakpoints
+$breakpoints: (
+    'mobile': 320px,
+    'tablet': 768px,
+    'laptop': 1024px,
+    'desktop': 1400px
+) !default;
+
+// Vars
+$max-cols: 12;
+$max-rows: 6;
+
+// Display
+.inline-grid {
+    display: inline-grid;
+}
+
+.grid {
+    display: grid;
+}
+
+// Gap's ================================================
+@for $i from 0 through $max-cols {
+
+    @if round($i / 2) == $i / 2 { // Comprueba si es decimal
+        .gap-#{$i / 2} {
+            gap: ($i / 2) * 1px;
+        }
+
+        .col-gap-#{$i / 2} {
+            column-gap: ($i / 2) * 1px;
+        }
+
+        .row-gap-#{$i / 2} {
+            row-gap: ($i / 2) * 1px;
+        }
+    } @else {
+        $var: round($i / 2) - 1;
+        
+        .gap-#{$var}\/2 {
+            gap: ($i / 2) * 1px;
+        }
+
+        .col-gap-#{$var}\/2 {
+            column-gap: ($i / 2) * 1px;
+        }
+
+        .row-gap-#{$var}\/2 {
+            row-gap: ($i / 2) * 1px;
+        }
+    }
+}
+
+// grid-template-colums =====================================
+@for $i from 0 through $max-cols {
+
+    @if $i == 0 {
+        .grid-cols-none {
+            grid-template-columns: none;
+        }
+    }
+
+    .grid-cols-#{$i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr));	   
+    }
+}
+
+// grid-colums =====================================
+@for $i from 0 through $max-cols {
+    @if $i == 0 {
+        // @for $i from 0 through $max-cols
+        @each $axis in (col, row){
+        .#{$axis}-auto {
+            grid-column: auto;
+        }
+        
+        .col-start-13 {
+            grid-column-start: 13;
+        }
+        .col-end-13 {
+            grid-column-end: 13;
+        }
+
+        .col-start-auto {
+            grid-column-start: auto;	
+        }
+        .col-end-auto {
+            grid-column-end: auto;	
+        }
+        }
+    }
+
+    .col-span-#{$i} {
+        grid-column: span $i / span $i;	
+    }
+
+    .col-start-#{$i} {
+        grid-column-start: $i;
+    }
+
+    .col-end-#{$i} {
+        grid-column-end: $i;
+    }
+}
+
+// grid-template-rows =====================================
+@for $i from 0 through $max-rows {
+    @if $i == 0 {
+        .grid-rows-none {
+            grid-template-rows: none;
+        }
+    }
+
+    .grid-rows-#{$i} {
+        grid-template-rows: repeat($i, minmax(0, 1fr));	
+    }
+}
