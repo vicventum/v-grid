@@ -8,6 +8,20 @@ $breakpoints: ('mobile': 320px,
 $max-cols: 12;
 $max-rows: 6;
 
+// Functions
+@function checkAxis($axis) {
+    @if $axis==col {
+        @return column;
+    } @else {
+        @return row;
+    }
+    @if $axis==cols {
+        @return columns;
+    } @else {
+        @return rows;
+    }
+}
+
 // Display
 .inline-grid {
     display: inline-grid;
@@ -56,15 +70,7 @@ $max-rows: 6;
 // grid-template-colums grid-template-rows =====================================
 @for $i from 0 through $max-cols {
     @each $axis in (cols, rows) {
-        $value: null;
-
-        @if $axis==cols {
-            $value: columns;
-        }
-
-        @else {
-            $value: $axis;
-        }
+        $value: checkAxis($axis);
 
         @if $i==0 {
             .grid-#{$axis}-none {
@@ -82,12 +88,7 @@ $max-rows: 6;
 // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,=====================================
 @for $i from 0 through $max-cols {
     @each $axis in (col, row) {
-        $value: row;
-
-        @if $axis==col {
-            $value: column;
-        }
-
+        $value: checkAxis($axis);
         @if $i==0 {
 
             .#{$axis}-auto {
@@ -129,15 +130,16 @@ $max-rows: 6;
 
 // grid-auto-flow =====================================
 @each $axis in (row, col) {
-    $value: row;
-    @if $axis==col {
-        $value: column
-    }
+    $value: checkAxis($axis);
 
     .grid-flow-#{$axis} {
         grid-auto-flow: #{$value};
     }
+
     .grid-flow-#{$axis}-dense {
         grid-auto-flow: #{$value} dense;
     }
 }
+
+
+
