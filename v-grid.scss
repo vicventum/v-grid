@@ -57,9 +57,12 @@ $max-rows: 6;
 @for $i from 0 through $max-cols {
     @each $axis in (cols, rows) {
         $value: null;
+
         @if $axis==cols {
             $value: columns;
-        } @else {
+        }
+
+        @else {
             $value: $axis;
         }
 
@@ -68,7 +71,7 @@ $max-rows: 6;
                 grid-template-#{$value}: none;
             }
         }
-    
+
         .grid-#{$axis}-#{$i} {
             grid-template-#{$value}: repeat($i, minmax(0, 1fr));
         }
@@ -79,11 +82,10 @@ $max-rows: 6;
 // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,=====================================
 @for $i from 0 through $max-cols {
     @each $axis in (col, row) {
-        $value: null;
+        $value: row;
+
         @if $axis==col {
             $value: column;
-        } @else {
-            $value: $axis;
         }
 
         @if $i==0 {
@@ -126,15 +128,16 @@ $max-rows: 6;
 }
 
 // grid-auto-flow =====================================
-.grid-flow-row {
-    grid-auto-flow: row;
-}
-.grid-flow-col {
-    grid-auto-flow: column;
-}
-.grid-flow-row-dense {
-    grid-auto-flow: row dense;
-}
-.grid-flow-col-dense {
-    grid-auto-flow: dense dense;
+@each $axis in (row, col) {
+    $value: row;
+    @if $axis==col {
+        $value: column
+    }
+
+    .grid-flow-#{$axis} {
+        grid-auto-flow: #{$value};
+    }
+    .grid-flow-#{$axis}-dense {
+        grid-auto-flow: #{$value} dense;
+    }
 }
