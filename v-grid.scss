@@ -1,10 +1,8 @@
 // Breakpoints
-$breakpoints: (
-    mb: 640px,
+$breakpoints: (mb: 640px,
     tb: 768px,
     lp: 1024px,
-    dt: 1280px
-) !default;
+    dt: 1280px) !default;
 
 // Vars
 $max-cols: 12;
@@ -12,29 +10,33 @@ $max-rows: 6;
 
 // Functions
 @function checkAxis($axis) {
-    @if $axis==col  or  $axis==cols{
+    @if $axis==col or $axis==cols {
         @if $axis==col {
             @return column;
-        } @else {
+        }
+
+        @else {
             @return columns;
         }
-                
-    }@else {
+
+    }
+
+    @else {
         @return #{$axis};
     }
 }
 
 @function checkAlign($align) {
-    @if $align == j {
+    @if $align==j {
         @return justify;
-    } @else {
+    }
+
+    @else {
         @return align;
     }
 }
 
-@mixin responsive($from) {
-
-}
+@mixin responsive($from) {}
 
 // Display
 .inline-grid {
@@ -64,22 +66,7 @@ $max-rows: 6;
             row-gap: ($i / 2) * 1px;
         }
 
-        // Responsive -----------------------------------
-        @each $sizeName, $size in $breakpoints {
-            @media screen and (min-width: $size) {
-                .#{$sizeName}\:gap-#{$i / 2} {
-                    gap: ($i / 2) * 1px;
-                }
-        
-                .#{$sizeName}\:col-gap-#{$i / 2} {
-                    column-gap: ($i / 2) * 1px;
-                }
-        
-                .#{$sizeName}\:row-gap-#{$i / 2} {
-                    row-gap: ($i / 2) * 1px;
-                }
-            }
-        }
+    
 
     }
 
@@ -98,22 +85,6 @@ $max-rows: 6;
             row-gap: ($i / 2) * 1px;
         }
 
-        // Responsive -----------------------------------
-        @each $sizeName, $size in $breakpoints {
-            @media screen and (min-width: $size) {
-                .#{$sizeName}\:gap-#{$var}\/2 {
-                    gap: ($i / 2) * 1px;
-                }
-        
-                .#{$sizeName}\:col-gap-#{$var}\/2 {
-                    column-gap: ($i / 2) * 1px;
-                }
-        
-                .#{$sizeName}\:row-gap-#{$var}\/2 {
-                    row-gap: ($i / 2) * 1px;
-                }
-            }
-        }
     }
 }
 
@@ -199,15 +170,163 @@ $max-rows: 6;
 @each $align in (j, a) {
     @each $mode in (items, content) {
         $alignName: checkAlign($align);
+
         @each $value in (start, end, center, stretch) {
             .#{$align}-#{$mode}-#{$value} {
                 #{$alignName}-#{$mode}: $value;
             }
         }
-        @if $mode == content {
+
+        @if $mode==content {
             @each $value in (around, between, evenly) {
                 .#{$align}-#{$mode}-#{$value} {
                     #{$alignName}-#{$mode}: space-#{$value};
+                }
+            }
+        }
+    }
+}
+
+
+
+// Responsive -----------------------------------
+@each $sizeName,$size in $breakpoints {
+    @media screen and (min-width: $size) {
+
+        // Gap's ================================================
+        @for $i from 0 through $max-cols {
+
+            @if round($i / 2)==$i / 2 {
+
+                // Comprueba si es decimal
+                .#{$sizeName}\:gap-#{$i / 2} {
+                    gap: ($i / 2) * 1px;
+                }
+
+                .#{$sizeName}\:col-gap-#{$i / 2} {
+                    column-gap: ($i / 2) * 1px;
+                }
+
+                .#{$sizeName}\:row-gap-#{$i / 2} {
+                    row-gap: ($i / 2) * 1px;
+                }
+
+
+            }
+
+            @else {
+                $var: round($i / 2) - 1;
+
+                .#{$sizeName}\:gap-#{$var}\/2 {
+                    gap: ($i / 2) * 1px;
+                }
+
+                .#{$sizeName}\:col-gap-#{$var}\/2 {
+                    column-gap: ($i / 2) * 1px;
+                }
+
+                .#{$sizeName}\:row-gap-#{$var}\/2 {
+                    row-gap: ($i / 2) * 1px;
+                }
+
+            }
+        }
+    }
+
+    // grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
+    @for $i from 0 through $max-cols {
+
+        // grid-template-colums grid-template-rows 
+        @each $axis in (cols, rows) {
+            $value: checkAxis($axis);
+
+            @if $i==0 {
+                .#{$sizeName}\:grid-#{$axis}-none {
+                    grid-template-#{$value}: none;
+                }
+            }
+
+            .#{$sizeName}\:grid-#{$axis}-#{$i} {
+                grid-template-#{$value}: repeat($i, minmax(0, 1fr));
+            }
+        }
+
+        // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,
+        @each $axis in (col, row) {
+            $value: checkAxis($axis);
+
+            @if $i==0 {
+
+                .#{$sizeName}\:#{$axis}-auto {
+                    grid-#{$value}: auto;
+                }
+
+                .#{$sizeName}\:#{$axis}-start-13 {
+                    grid-#{$value}-start: 13;
+                }
+
+                .#{$sizeName}\:#{$axis}-end-13 {
+                    grid-#{$value}-end: 13;
+                }
+
+                .#{$sizeName}\:#{$axis}-start-auto {
+                    grid-#{$value}-start: auto;
+                }
+
+                .#{$sizeName}\:#{$axis}-end-auto {
+                    grid-#{$value}-end: auto;
+                }
+            }
+
+
+            .#{$sizeName}\:#{$axis}-span-#{$i} {
+                grid-#{$value}: span $i / span $i;
+            }
+
+            .#{$sizeName}\:#{$axis}-start-#{$i} {
+                grid-#{$value}-start: $i;
+            }
+
+            .#{$sizeName}\:#{$axis}-end-#{$i} {
+                grid-#{$value}-end: $i;
+            }
+        }
+
+    }
+
+    // grid-auto-flow =====================================
+    @each $axis in (row, col) {
+        $value: checkAxis($axis);
+
+        .#{$sizeName}\:grid-flow-#{$axis} {
+            grid-auto-flow: #{$value};
+        }
+
+        .#{$sizeName}\:grid-flow-#{$axis}-dense {
+            grid-auto-flow: #{$value} dense;
+        }
+    }
+
+    // Alignment ===================================================
+    // justify-items:   start | end | center | stretch;
+    // align-items:     start | end | center | stretch;
+    // justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
+    // align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
+    @each $align in (j, a) {
+        @each $mode in (items, content) {
+            $alignName: checkAlign($align);
+
+            @each $value in (start, end, center, stretch) {
+                .#{$sizeName}\:#{$align}-#{$mode}-#{$value} {
+                    #{$alignName}-#{$mode}: $value;
+                }
+            }
+
+            @if $mode==content {
+                @each $value in (around, between, evenly) {
+                    .#{$sizeName}\:#{$align}-#{$mode}-#{$value} {
+                        #{$alignName}-#{$mode}: space-#{$value};
+                    }
                 }
             }
         }
