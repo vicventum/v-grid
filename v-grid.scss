@@ -1,5 +1,7 @@
 // Breakpoints
-$breakpoints: (mb: 640px,
+$breakpoints: (
+    '': 0,
+    mb: 640px,
     tb: 768px,
     lp: 1024px,
     dt: 1280px) !default;
@@ -7,6 +9,7 @@ $breakpoints: (mb: 640px,
 // Vars
 $max-cols: 12;
 $max-rows: 6;
+$responsiveSign: \:;
 
 // Functions
 @function checkAxis($axis) {
@@ -48,166 +51,27 @@ $max-rows: 6;
 }
 
 
-// Gap's ================================================
-@for $i from 0 through $max-cols {
-
-    @if round($i / 2)==$i / 2 {
-
-        // Comprueba si es decimal
-        .gap-#{$i / 2} {
-            gap: ($i / 2) * 1px;
-        }
-
-        .col-gap-#{$i / 2} {
-            column-gap: ($i / 2) * 1px;
-        }
-
-        .row-gap-#{$i / 2} {
-            row-gap: ($i / 2) * 1px;
-        }
-
-    
-
-    }
-
-    @else {
-        $var: round($i / 2) - 1;
-
-        .gap-#{$var}\/2 {
-            gap: ($i / 2) * 1px;
-        }
-
-        .col-gap-#{$var}\/2 {
-            column-gap: ($i / 2) * 1px;
-        }
-
-        .row-gap-#{$var}\/2 {
-            row-gap: ($i / 2) * 1px;
-        }
-
-    }
-}
-
-// grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
-@for $i from 0 through $max-cols {
-
-    // grid-template-colums grid-template-rows 
-    @each $axis in (cols, rows) {
-        $value: checkAxis($axis);
-
-        @if $i==0 {
-            .grid-#{$axis}-none {
-                grid-template-#{$value}: none;
-            }
-        }
-
-        .grid-#{$axis}-#{$i} {
-            grid-template-#{$value}: repeat($i, minmax(0, 1fr));
-        }
-    }
-
-    // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,
-    @each $axis in (col, row) {
-        $value: checkAxis($axis);
-
-        @if $i==0 {
-
-            .#{$axis}-auto {
-                grid-#{$value}: auto;
-            }
-
-            .#{$axis}-start-13 {
-                grid-#{$value}-start: 13;
-            }
-
-            .#{$axis}-end-13 {
-                grid-#{$value}-end: 13;
-            }
-
-            .#{$axis}-start-auto {
-                grid-#{$value}-start: auto;
-            }
-
-            .#{$axis}-end-auto {
-                grid-#{$value}-end: auto;
-            }
-        }
-
-
-        .#{$axis}-span-#{$i} {
-            grid-#{$value}: span $i / span $i;
-        }
-
-        .#{$axis}-start-#{$i} {
-            grid-#{$value}-start: $i;
-        }
-
-        .#{$axis}-end-#{$i} {
-            grid-#{$value}-end: $i;
-        }
-    }
-
-}
-
-// grid-auto-flow =====================================
-@each $axis in (row, col) {
-    $value: checkAxis($axis);
-
-    .grid-flow-#{$axis} {
-        grid-auto-flow: #{$value};
-    }
-
-    .grid-flow-#{$axis}-dense {
-        grid-auto-flow: #{$value} dense;
-    }
-}
-
-// Alignment ===================================================
-// justify-items:   start | end | center | stretch;
-// align-items:     start | end | center | stretch;
-// justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
-// align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
-@each $align in (j, a) {
-    @each $mode in (items, content) {
-        $alignName: checkAlign($align);
-
-        @each $value in (start, end, center, stretch) {
-            .#{$align}-#{$mode}-#{$value} {
-                #{$alignName}-#{$mode}: $value;
-            }
-        }
-
-        @if $mode==content {
-            @each $value in (around, between, evenly) {
-                .#{$align}-#{$mode}-#{$value} {
-                    #{$alignName}-#{$mode}: space-#{$value};
-                }
-            }
-        }
-    }
-}
-
-
-
 // Responsive -----------------------------------
 @each $sizeName,$size in $breakpoints {
     @media screen and (min-width: $size) {
-
+        @if $sizeName == '' {
+            $responsiveSign: '';
+        }
         // Gap's ================================================
         @for $i from 0 through $max-cols {
 
             @if round($i / 2)==$i / 2 {
 
                 // Comprueba si es decimal
-                .#{$sizeName}\:gap-#{$i / 2} {
+                .#{$sizeName}#{$responsiveSign}gap-#{$i / 2} {
                     gap: ($i / 2) * 1px;
                 }
 
-                .#{$sizeName}\:col-gap-#{$i / 2} {
+                .#{$sizeName}#{$responsiveSign}col-gap-#{$i / 2} {
                     column-gap: ($i / 2) * 1px;
                 }
 
-                .#{$sizeName}\:row-gap-#{$i / 2} {
+                .#{$sizeName}#{$responsiveSign}row-gap-#{$i / 2} {
                     row-gap: ($i / 2) * 1px;
                 }
 
@@ -217,15 +81,15 @@ $max-rows: 6;
             @else {
                 $var: round($i / 2) - 1;
 
-                .#{$sizeName}\:gap-#{$var}\/2 {
+                .#{$sizeName}#{$responsiveSign}gap-#{$var}\/2 {
                     gap: ($i / 2) * 1px;
                 }
 
-                .#{$sizeName}\:col-gap-#{$var}\/2 {
+                .#{$sizeName}#{$responsiveSign}col-gap-#{$var}\/2 {
                     column-gap: ($i / 2) * 1px;
                 }
 
-                .#{$sizeName}\:row-gap-#{$var}\/2 {
+                .#{$sizeName}#{$responsiveSign}row-gap-#{$var}\/2 {
                     row-gap: ($i / 2) * 1px;
                 }
 
@@ -241,12 +105,12 @@ $max-rows: 6;
             $value: checkAxis($axis);
 
             @if $i==0 {
-                .#{$sizeName}\:grid-#{$axis}-none {
+                .#{$sizeName}#{$responsiveSign}grid-#{$axis}-none {
                     grid-template-#{$value}: none;
                 }
             }
 
-            .#{$sizeName}\:grid-#{$axis}-#{$i} {
+            .#{$sizeName}#{$responsiveSign}grid-#{$axis}-#{$i} {
                 grid-template-#{$value}: repeat($i, minmax(0, 1fr));
             }
         }
@@ -257,37 +121,37 @@ $max-rows: 6;
 
             @if $i==0 {
 
-                .#{$sizeName}\:#{$axis}-auto {
+                .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
                     grid-#{$value}: auto;
                 }
 
-                .#{$sizeName}\:#{$axis}-start-13 {
+                .#{$sizeName}#{$responsiveSign}#{$axis}-start-13 {
                     grid-#{$value}-start: 13;
                 }
 
-                .#{$sizeName}\:#{$axis}-end-13 {
+                .#{$sizeName}#{$responsiveSign}#{$axis}-end-13 {
                     grid-#{$value}-end: 13;
                 }
 
-                .#{$sizeName}\:#{$axis}-start-auto {
+                .#{$sizeName}#{$responsiveSign}#{$axis}-start-auto {
                     grid-#{$value}-start: auto;
                 }
 
-                .#{$sizeName}\:#{$axis}-end-auto {
+                .#{$sizeName}#{$responsiveSign}#{$axis}-end-auto {
                     grid-#{$value}-end: auto;
                 }
             }
 
 
-            .#{$sizeName}\:#{$axis}-span-#{$i} {
+            .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
                 grid-#{$value}: span $i / span $i;
             }
 
-            .#{$sizeName}\:#{$axis}-start-#{$i} {
+            .#{$sizeName}#{$responsiveSign}#{$axis}-start-#{$i} {
                 grid-#{$value}-start: $i;
             }
 
-            .#{$sizeName}\:#{$axis}-end-#{$i} {
+            .#{$sizeName}#{$responsiveSign}#{$axis}-end-#{$i} {
                 grid-#{$value}-end: $i;
             }
         }
@@ -298,11 +162,11 @@ $max-rows: 6;
     @each $axis in (row, col) {
         $value: checkAxis($axis);
 
-        .#{$sizeName}\:grid-flow-#{$axis} {
+        .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis} {
             grid-auto-flow: #{$value};
         }
 
-        .#{$sizeName}\:grid-flow-#{$axis}-dense {
+        .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis}-dense {
             grid-auto-flow: #{$value} dense;
         }
     }
@@ -317,14 +181,14 @@ $max-rows: 6;
             $alignName: checkAlign($align);
 
             @each $value in (start, end, center, stretch) {
-                .#{$sizeName}\:#{$align}-#{$mode}-#{$value} {
+                .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
                     #{$alignName}-#{$mode}: $value;
                 }
             }
 
             @if $mode==content {
                 @each $value in (around, between, evenly) {
-                    .#{$sizeName}\:#{$align}-#{$mode}-#{$value} {
+                    .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
                         #{$alignName}-#{$mode}: space-#{$value};
                     }
                 }
