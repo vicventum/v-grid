@@ -1,8 +1,10 @@
 // Breakpoints
-$breakpoints: ('mobile': 320px,
-    'tablet': 768px,
-    'laptop': 1024px,
-    'desktop': 1400px) !default;
+$breakpoints: (
+    mb: 640px,
+    tb: 768px,
+    lp: 1024px,
+    dt: 1280px
+) !default;
 
 // Vars
 $max-cols: 12;
@@ -28,6 +30,10 @@ $max-rows: 6;
     } @else {
         @return align;
     }
+}
+
+@mixin responsive($from) {
+
 }
 
 // Display
@@ -57,6 +63,24 @@ $max-rows: 6;
         .row-gap-#{$i / 2} {
             row-gap: ($i / 2) * 1px;
         }
+
+        // Responsive -----------------------------------
+        @each $sizeName, $size in $breakpoints {
+            @media screen and (min-width: $size) {
+                .#{$sizeName}\:gap-#{$i / 2} {
+                    gap: ($i / 2) * 1px;
+                }
+        
+                .#{$sizeName}\:col-gap-#{$i / 2} {
+                    column-gap: ($i / 2) * 1px;
+                }
+        
+                .#{$sizeName}\:row-gap-#{$i / 2} {
+                    row-gap: ($i / 2) * 1px;
+                }
+            }
+        }
+
     }
 
     @else {
@@ -72,6 +96,23 @@ $max-rows: 6;
 
         .row-gap-#{$var}\/2 {
             row-gap: ($i / 2) * 1px;
+        }
+
+        // Responsive -----------------------------------
+        @each $sizeName, $size in $breakpoints {
+            @media screen and (min-width: $size) {
+                .#{$sizeName}\:gap-#{$var}\/2 {
+                    gap: ($i / 2) * 1px;
+                }
+        
+                .#{$sizeName}\:col-gap-#{$var}\/2 {
+                    column-gap: ($i / 2) * 1px;
+                }
+        
+                .#{$sizeName}\:row-gap-#{$var}\/2 {
+                    row-gap: ($i / 2) * 1px;
+                }
+            }
         }
     }
 }
@@ -150,7 +191,7 @@ $max-rows: 6;
     }
 }
 
-// Alignment
+// Alignment ===================================================
 // justify-items:   start | end | center | stretch;
 // align-items:     start | end | center | stretch;
 // justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
