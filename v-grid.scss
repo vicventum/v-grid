@@ -1,10 +1,8 @@
 // Breakpoints
-$breakpoints: (
-    'mobile': 320px,
+$breakpoints: ('mobile': 320px,
     'tablet': 768px,
     'laptop': 1024px,
-    'desktop': 1400px
-) !default;
+    'desktop': 1400px) !default;
 
 // Vars
 $max-cols: 12;
@@ -15,14 +13,16 @@ $max-rows: 6;
     display: inline-grid;
 }
 
-.grid {
+.v-grid {
     display: grid;
 }
 
 // Gap's ================================================
 @for $i from 0 through $max-cols {
 
-    @if round($i / 2) == $i / 2 { // Comprueba si es decimal
+    @if round($i / 2)==$i / 2 {
+
+        // Comprueba si es decimal
         .gap-#{$i / 2} {
             gap: ($i / 2) * 1px;
         }
@@ -34,9 +34,11 @@ $max-rows: 6;
         .row-gap-#{$i / 2} {
             row-gap: ($i / 2) * 1px;
         }
-    } @else {
+    }
+
+    @else {
         $var: round($i / 2) - 1;
-        
+
         .gap-#{$var}\/2 {
             gap: ($i / 2) * 1px;
         }
@@ -51,67 +53,88 @@ $max-rows: 6;
     }
 }
 
-// grid-template-colums =====================================
+// grid-template-colums grid-template-rows =====================================
 @for $i from 0 through $max-cols {
+    @each $axis in (cols, rows) {
+        $value: null;
+        @if $axis==cols {
+            $value: columns;
+        } @else {
+            $value: $axis;
+        }
 
-    @if $i == 0 {
-        .grid-cols-none {
-            grid-template-columns: none;
+        @if $i==0 {
+            .grid-#{$axis}-none {
+                grid-template-#{$value}: none;
+            }
+        }
+    
+        .grid-#{$axis}-#{$i} {
+            grid-template-#{$value}: repeat($i, minmax(0, 1fr));
         }
     }
 
-    .grid-cols-#{$i} {
-        grid-template-columns: repeat($i, minmax(0, 1fr));	   
-    }
 }
 
-// grid-colums =====================================
+// grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,=====================================
 @for $i from 0 through $max-cols {
-    @if $i == 0 {
-        // @for $i from 0 through $max-cols
-        @each $axis in (col, row){
-        .#{$axis}-auto {
-            grid-column: auto;
-        }
-        
-        .col-start-13 {
-            grid-column-start: 13;
-        }
-        .col-end-13 {
-            grid-column-end: 13;
+    @each $axis in (col, row) {
+        $value: null;
+        @if $axis==col {
+            $value: column;
+        } @else {
+            $value: $axis;
         }
 
-        .col-start-auto {
-            grid-column-start: auto;	
+        @if $i==0 {
+
+            .#{$axis}-auto {
+                grid-#{$value}: auto;
+            }
+
+            .#{$axis}-start-13 {
+                grid-#{$value}-start: 13;
+            }
+
+            .#{$axis}-end-13 {
+                grid-#{$value}-end: 13;
+            }
+
+            .#{$axis}-start-auto {
+                grid-#{$value}-start: auto;
+            }
+
+            .#{$axis}-end-auto {
+                grid-#{$value}-end: auto;
+            }
         }
-        .col-end-auto {
-            grid-column-end: auto;	
+
+
+        .#{$axis}-span-#{$i} {
+            grid-#{$value}: span $i / span $i;
         }
+
+        .#{$axis}-start-#{$i} {
+            grid-#{$value}-start: $i;
+        }
+
+        .#{$axis}-end-#{$i} {
+            grid-#{$value}-end: $i;
         }
     }
 
-    .col-span-#{$i} {
-        grid-column: span $i / span $i;	
-    }
-
-    .col-start-#{$i} {
-        grid-column-start: $i;
-    }
-
-    .col-end-#{$i} {
-        grid-column-end: $i;
-    }
 }
 
-// grid-template-rows =====================================
-@for $i from 0 through $max-rows {
-    @if $i == 0 {
-        .grid-rows-none {
-            grid-template-rows: none;
-        }
-    }
-
-    .grid-rows-#{$i} {
-        grid-template-rows: repeat($i, minmax(0, 1fr));	
-    }
+// grid-auto-flow =====================================
+.grid-flow-row {
+    grid-auto-flow: row;
+}
+.grid-flow-col {
+    grid-auto-flow: column;
+}
+.grid-flow-row-dense {
+    grid-auto-flow: row dense;
+}
+.grid-flow-col-dense {
+    grid-auto-flow: dense dense;
 }
