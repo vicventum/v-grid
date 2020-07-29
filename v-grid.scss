@@ -10,15 +10,23 @@ $max-rows: 6;
 
 // Functions
 @function checkAxis($axis) {
-    @if $axis==col {
-        @return column;
-    } @else {
-        @return row;
+    @if $axis==col  or  $axis==cols{
+        @if $axis==col {
+            @return column;
+        } @else {
+            @return columns;
+        }
+                
+    }@else {
+        @return #{$axis};
     }
-    @if $axis==cols {
-        @return columns;
+}
+
+@function checkAlign($align) {
+    @if $align == j {
+        @return justify;
     } @else {
-        @return rows;
+        @return align;
     }
 }
 
@@ -30,6 +38,7 @@ $max-rows: 6;
 .v-grid {
     display: grid;
 }
+
 
 // Gap's ================================================
 @for $i from 0 through $max-cols {
@@ -67,8 +76,10 @@ $max-rows: 6;
     }
 }
 
-// grid-template-colums grid-template-rows =====================================
+// grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
 @for $i from 0 through $max-cols {
+
+    // grid-template-colums grid-template-rows 
     @each $axis in (cols, rows) {
         $value: checkAxis($axis);
 
@@ -83,12 +94,10 @@ $max-rows: 6;
         }
     }
 
-}
-
-// grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,=====================================
-@for $i from 0 through $max-cols {
+    // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,
     @each $axis in (col, row) {
         $value: checkAxis($axis);
+
         @if $i==0 {
 
             .#{$axis}-auto {
@@ -141,5 +150,25 @@ $max-rows: 6;
     }
 }
 
-
-
+// Alignment
+// justify-items:   start | end | center | stretch;
+// align-items:     start | end | center | stretch;
+// justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
+// align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
+@each $align in (j, a) {
+    @each $mode in (items, content) {
+        $alignName: checkAlign($align);
+        @each $value in (start, end, center, stretch) {
+            .#{$align}-#{$mode}-#{$value} {
+                #{$alignName}-#{$mode}: $value;
+            }
+        }
+        @if $mode == content {
+            @each $value in (around, between, evenly) {
+                .#{$align}-#{$mode}-#{$value} {
+                    #{$alignName}-#{$mode}: space-#{$value};
+                }
+            }
+        }
+    }
+}
