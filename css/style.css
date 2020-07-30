@@ -1,6 +1,17 @@
 div {
   background-color: salmon;
   padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+  color: white;
 }
 
 section {
@@ -45,5 +56,10 @@ section {
   -ms-grid-row-span: 2;
   -ms-grid-column: 4;
   grid-area: i4;
+}
+
+.test {
+  -ms-grid-row: 2 !important;
+      grid-row-start: 2 !important;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,5 @@
 // Breakpoints
-$breakpoints: (
-    '': 0,
+$breakpoints: ('': 0,
     mb: 640px,
     tb: 768px,
     lp: 1024px,
@@ -39,8 +38,6 @@ $responsiveSign: \:;
     }
 }
 
-@mixin responsive($from) {}
-
 // Display
 .inline-grid {
     display: inline-grid;
@@ -52,27 +49,33 @@ $responsiveSign: \:;
 
 
 // Responsive -----------------------------------
-@each $sizeName,$size in $breakpoints {
+@each $sizeName,
+$size in $breakpoints {
     @media screen and (min-width: $size) {
-        @if $sizeName == '' {
+        @if $sizeName=='' {
             $responsiveSign: '';
         }
+
+        @else {
+            $responsiveSign: \:;
+        }
+
         // Gap's ================================================
-        @for $i from 0 through $max-cols {
+        @for $i from 0 through 10 {
 
             @if round($i / 2)==$i / 2 {
 
                 // Comprueba si es decimal
                 .#{$sizeName}#{$responsiveSign}gap-#{$i / 2} {
-                    gap: ($i / 2) * 1px;
+                    gap: ($i / 2) * 1rem;
                 }
 
                 .#{$sizeName}#{$responsiveSign}col-gap-#{$i / 2} {
-                    column-gap: ($i / 2) * 1px;
+                    column-gap: ($i / 2) * 1rem;
                 }
 
                 .#{$sizeName}#{$responsiveSign}row-gap-#{$i / 2} {
-                    row-gap: ($i / 2) * 1px;
+                    row-gap: ($i / 2) * 1rem;
                 }
 
 
@@ -81,118 +84,138 @@ $responsiveSign: \:;
             @else {
                 $var: round($i / 2) - 1;
 
-                .#{$sizeName}#{$responsiveSign}gap-#{$var}\/2 {
-                    gap: ($i / 2) * 1px;
+                .#{$sizeName}#{$responsiveSign}gap-#{$var}\,5 {
+                    gap: ($i / 2) * 1rem;
                 }
 
-                .#{$sizeName}#{$responsiveSign}col-gap-#{$var}\/2 {
-                    column-gap: ($i / 2) * 1px;
+                .#{$sizeName}#{$responsiveSign}col-gap-#{$var}\,5 {
+                    column-gap: ($i / 2) * 1rem;
                 }
 
-                .#{$sizeName}#{$responsiveSign}row-gap-#{$var}\/2 {
-                    row-gap: ($i / 2) * 1px;
+                .#{$sizeName}#{$responsiveSign}row-gap-#{$var}\,5 {
+                    row-gap: ($i / 2) * 1rem;
                 }
 
             }
         }
-    }
 
-    // grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
-    @for $i from 0 through $max-cols {
 
-        // grid-template-colums grid-template-rows 
-        @each $axis in (cols, rows) {
+        // grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
+        @for $i from 0 through $max-cols {
+
+            // grid-template-colums grid-template-rows 
+            @each $axis in (cols, rows) {
+                $value: checkAxis($axis);
+
+                @if $i==0 {
+                    .#{$sizeName}#{$responsiveSign}grid-#{$axis}-none {
+                        grid-template-#{$value}: none;
+                    }
+                }
+
+                .#{$sizeName}#{$responsiveSign}grid-#{$axis}-#{$i} {
+                    grid-template-#{$value}: repeat($i, minmax(0, 1fr));
+                }
+            }
+
+            // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,
+            @each $axis in (col, row) {
+                $value: checkAxis($axis);
+
+                @if $i==0 {
+
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
+                        grid-#{$value}: auto;
+                    }
+
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-start-13 {
+                        grid-#{$value}-start: 13;
+                    }
+
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-end-13 {
+                        grid-#{$value}-end: 13;
+                    }
+
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-start-auto {
+                        grid-#{$value}-start: auto;
+                    }
+
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-end-auto {
+                        grid-#{$value}-end: auto;
+                    }
+                }
+
+                .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
+                    grid-#{$value}: span $i / span $i;
+                }
+
+
+
+
+            }
+
+        }
+
+        // grid-auto-flow =====================================
+        @each $axis in (row, col) {
             $value: checkAxis($axis);
 
-            @if $i==0 {
-                .#{$sizeName}#{$responsiveSign}grid-#{$axis}-none {
-                    grid-template-#{$value}: none;
-                }
+            .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis} {
+                grid-auto-flow: #{$value};
             }
 
-            .#{$sizeName}#{$responsiveSign}grid-#{$axis}-#{$i} {
-                grid-template-#{$value}: repeat($i, minmax(0, 1fr));
+            .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis}-dense {
+                grid-auto-flow: #{$value} dense;
             }
         }
 
-        // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,
-        @each $axis in (col, row) {
-            $value: checkAxis($axis);
+        // Alignment ===================================================
+        // justify-items:   start | end | center | stretch;
+        // align-items:     start | end | center | stretch;
+        // justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
+        // align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
+        @each $align in (j, a) {
+            @each $mode in (items, content) {
+                $alignName: checkAlign($align);
 
-            @if $i==0 {
-
-                .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
-                    grid-#{$value}: auto;
-                }
-
-                .#{$sizeName}#{$responsiveSign}#{$axis}-start-13 {
-                    grid-#{$value}-start: 13;
-                }
-
-                .#{$sizeName}#{$responsiveSign}#{$axis}-end-13 {
-                    grid-#{$value}-end: 13;
-                }
-
-                .#{$sizeName}#{$responsiveSign}#{$axis}-start-auto {
-                    grid-#{$value}-start: auto;
-                }
-
-                .#{$sizeName}#{$responsiveSign}#{$axis}-end-auto {
-                    grid-#{$value}-end: auto;
-                }
-            }
-
-
-            .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
-                grid-#{$value}: span $i / span $i;
-            }
-
-            .#{$sizeName}#{$responsiveSign}#{$axis}-start-#{$i} {
-                grid-#{$value}-start: $i;
-            }
-
-            .#{$sizeName}#{$responsiveSign}#{$axis}-end-#{$i} {
-                grid-#{$value}-end: $i;
-            }
-        }
-
-    }
-
-    // grid-auto-flow =====================================
-    @each $axis in (row, col) {
-        $value: checkAxis($axis);
-
-        .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis} {
-            grid-auto-flow: #{$value};
-        }
-
-        .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis}-dense {
-            grid-auto-flow: #{$value} dense;
-        }
-    }
-
-    // Alignment ===================================================
-    // justify-items:   start | end | center | stretch;
-    // align-items:     start | end | center | stretch;
-    // justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
-    // align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
-    @each $align in (j, a) {
-        @each $mode in (items, content) {
-            $alignName: checkAlign($align);
-
-            @each $value in (start, end, center, stretch) {
-                .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
-                    #{$alignName}-#{$mode}: $value;
-                }
-            }
-
-            @if $mode==content {
-                @each $value in (around, between, evenly) {
+                @each $value in (start, end, center, stretch) {
                     .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
-                        #{$alignName}-#{$mode}: space-#{$value};
+                        #{$alignName}-#{$mode}: $value;
+                    }
+                }
+
+                @if $mode==content {
+                    @each $value in (around, between, evenly) {
+                        .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
+                            #{$alignName}-#{$mode}: space-#{$value};
+                        }
                     }
                 }
             }
+        }
+    }
+}
+
+
+// FIXME: Responsive para solucionar el conflicto de colum-span con colum-start -----------------------------------
+@each $sizeName,
+$size in $breakpoints {
+    @media screen and (min-width: $size) {
+
+        @for $i from 0 through $max-cols {
+
+            @each $axis in (col, row) {
+                $value: checkAxis($axis);
+
+                .#{$sizeName}#{$responsiveSign}#{$axis}-start-#{$i} {
+                    grid-#{$value}-start: $i;
+                }
+
+                .#{$sizeName}#{$responsiveSign}#{$axis}-end-#{$i} {
+                    grid-#{$value}-end: $i;
+                }
+            }
+
         }
     }
 }
