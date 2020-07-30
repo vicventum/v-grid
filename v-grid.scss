@@ -36,14 +36,6 @@ $responsiveSign: \:;
     }
 }
 
-// Display
-.v-inline-grid {
-    display: inline-grid;
-}
-
-.v-grid {
-    display: grid;
-}
 
 
 // Responsive -----------------------------------
@@ -55,6 +47,20 @@ $size in $breakpoints {
         }
         @else {
             $responsiveSign: \:;
+        }
+        // Display ==========================================
+        .#{$sizeName}#{$responsiveSign}v-inline-grid {
+            display: inline-grid;
+        }
+
+        .#{$sizeName}#{$responsiveSign}v-grid {
+            display: grid;
+        }
+        .#{$sizeName}#{$responsiveSign}v-inline-flex {
+            display: inline-flex;
+        }
+        .#{$sizeName}#{$responsiveSign}v-flex {
+            display: flex;
         }
 
         // Gap's ================================================
@@ -207,5 +213,80 @@ $size in $breakpoints {
             }
 
         }
+    }
+}
+
+// flex-direction =========================================
+@each $axis in (col, row) {
+    $value: checkAxis($axis);
+    .flex-#{$axis} {
+        flex-direction: $value;
+    }
+    .flex-#{$axis}-reverse {
+        flex-direction: #{$value}-reverse;
+    }
+}
+
+// flex-wrap ====================================================
+@each $value in (wrap, wrap-reverse, nowrap) {
+    .flex-#{$value} {
+        flex-wrap: $value;
+    }
+}
+
+// flex ====================================================
+@each $name, $value in (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none) {
+    .flex-#{$name} {
+        flex: $value;
+    }
+}
+// flex-grow, flex-shrink =======================================
+@each $name in (grow, shrink) {
+    @for $value from 0 through 1 {
+        $nameValue: '-#{$value}';
+        @if $nameValue == '-1' {$nameValue: ''}
+        .flex-#{$name}#{$nameValue} {
+            flex-#{$name}: $value;
+        }        
+    }
+}
+
+// order =========================================================
+@for $i from 0 through 12 {
+    @if $i == 0 {
+        @each $name, $value in (first: -9999, last: 9999, none: 0) {
+            .order-#{$name} {
+                order: $value
+            }
+        }
+    }
+    .order-#{$i} {
+        order: $i
+    }
+}
+// width =========================================================
+@for $i from 1 through 12 {
+    @if $i <= 6 or $i == 12 {
+        @if $i == 1 {
+            @each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vw) {
+                .w-#{$name} {
+                    width: $value;
+                }
+            }
+        } @else {
+
+            @for $j from 1 to $i {
+                .w-#{$j}\/#{$i} {
+                    width: ($j / $i) * 100%;
+                }
+            }
+        }
+    }
+}
+
+// height =========================================================
+@each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vh) {
+    .h-#{$name} {
+        height: $value;
     }
 }
