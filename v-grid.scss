@@ -1,13 +1,14 @@
 // Breakpoints
-$breakpoints: ('': 0,
+$breakpoints: (
+    '': 0, // Mantener en 0
     m: 640px,
     t: 768px,
     l: 1024px,
-    d: 1280px) !default;
+    d: 1280px
+) !default;
 
 // Vars
 $max-cols: 12;
-$max-rows: 6;
 $responsiveSign: \:;
 
 // Functions
@@ -252,7 +253,13 @@ $size in $breakpoints {
 @each $sizeName,
 $size in $breakpoints {
     @media screen and (min-width: $size) {
-
+        @if $sizeName=='' {
+            $responsiveSign: '';
+        }
+        @else {
+            $responsiveSign: \:;
+        }
+        
         @for $i from 0 through $max-cols {
             
             @each $axis in (col, row) {
