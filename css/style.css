@@ -17,49 +17,4 @@ div {
 section {
   margin: 2rem;
 }
-
-.grid-manual {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
-  gap: 1rem;
-      grid-template-areas: 'i1  i2   i2  i4' 'i1  i2   i2  i4' 'i1  i3   i3  i3';
-}
-
-.grid-manual .i-1 {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 1;
-  grid-area: i1;
-}
-
-.grid-manual .i-2 {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: i2;
-}
-
-.grid-manual .i-3 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-area: i3;
-}
-
-.grid-manual .i-4 {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 4;
-  grid-area: i4;
-}
-
-.test {
-  -ms-grid-row: 2 !important;
-      grid-row-start: 2 !important;
-}
 /*# sourceMappingURL=style.css.map */
