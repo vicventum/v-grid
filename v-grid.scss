@@ -22,7 +22,6 @@ $responsiveSign: \:;
         }
 
     }
-
     @else {
         @return #{$axis};
     }
@@ -32,14 +31,13 @@ $responsiveSign: \:;
     @if $align==j {
         @return justify;
     }
-
     @else {
         @return align;
     }
 }
 
 // Display
-.inline-grid {
+.v-inline-grid {
     display: inline-grid;
 }
 
@@ -55,7 +53,6 @@ $size in $breakpoints {
         @if $sizeName=='' {
             $responsiveSign: '';
         }
-
         @else {
             $responsiveSign: \:;
         }
@@ -78,10 +75,8 @@ $size in $breakpoints {
                     row-gap: ($i / 2) * 1rem;
                 }
 
+            }@else {
 
-            }
-
-            @else {
                 $var: round($i / 2) - 1;
 
                 .#{$sizeName}#{$responsiveSign}gap-#{$var}\,5 {
@@ -95,10 +90,8 @@ $size in $breakpoints {
                 .#{$sizeName}#{$responsiveSign}row-gap-#{$var}\,5 {
                     row-gap: ($i / 2) * 1rem;
                 }
-
             }
         }
-
 
         // grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
         @for $i from 0 through $max-cols {
@@ -148,12 +141,7 @@ $size in $breakpoints {
                 .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
                     grid-#{$value}: span $i / span $i;
                 }
-
-
-
-
             }
-
         }
 
         // grid-auto-flow =====================================
@@ -172,10 +160,12 @@ $size in $breakpoints {
         // Alignment ===================================================
         // justify-items:   start | end | center | stretch;
         // align-items:     start | end | center | stretch;
+        // justify-self:   start | end | center | stretch;
+        // align-self:     start | end | center | stretch;
         // justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
         // align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
         @each $align in (j, a) {
-            @each $mode in (items, content) {
+            @each $mode in (items, content, self) {
                 $alignName: checkAlign($align);
 
                 @each $value in (start, end, center, stretch) {
