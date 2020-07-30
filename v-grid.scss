@@ -1,9 +1,9 @@
 // Breakpoints
 $breakpoints: ('': 0,
-    mb: 640px,
-    tb: 768px,
-    lp: 1024px,
-    dt: 1280px) !default;
+    m: 640px,
+    t: 768px,
+    l: 1024px,
+    d: 1280px) !default;
 
 // Vars
 $max-cols: 12;
@@ -16,7 +16,6 @@ $responsiveSign: \:;
         @if $axis==col {
             @return column;
         }
-
         @else {
             @return columns;
         }
@@ -37,7 +36,6 @@ $responsiveSign: \:;
 }
 
 
-
 // Responsive -----------------------------------
 @each $sizeName,
 $size in $breakpoints {
@@ -48,6 +46,7 @@ $size in $breakpoints {
         @else {
             $responsiveSign: \:;
         }
+
         // Display ==========================================
         .#{$sizeName}#{$responsiveSign}v-inline-grid {
             display: inline-grid;
@@ -110,42 +109,21 @@ $size in $breakpoints {
                     .#{$sizeName}#{$responsiveSign}grid-#{$axis}-none {
                         grid-template-#{$value}: none;
                     }
-                }
-
-                .#{$sizeName}#{$responsiveSign}grid-#{$axis}-#{$i} {
-                    grid-template-#{$value}: repeat($i, minmax(0, 1fr));
+                } @else {
+                    .#{$sizeName}#{$responsiveSign}grid-#{$axis}-#{$i} {
+                        grid-template-#{$value}: repeat($i, minmax(0, 1fr));
+                    }
                 }
             }
 
-            // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end,
+            // grid-span
             @each $axis in (col, row) {
                 $value: checkAxis($axis);
 
-                @if $i==0 {
-
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
-                        grid-#{$value}: auto;
+                @if $i > 0 {
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
+                        grid-#{$value}: span $i / span $i;
                     }
-
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-start-13 {
-                        grid-#{$value}-start: 13;
-                    }
-
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-end-13 {
-                        grid-#{$value}-end: 13;
-                    }
-
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-start-auto {
-                        grid-#{$value}-start: auto;
-                    }
-
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-end-auto {
-                        grid-#{$value}-end: auto;
-                    }
-                }
-
-                .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
-                    grid-#{$value}: span $i / span $i;
                 }
             }
         }
@@ -189,104 +167,117 @@ $size in $breakpoints {
                 }
             }
         }
+
+        // v-flex ==================================================
+      
+        // flex-direction =========================================
+        @each $axis in (col, row) {
+            $value: checkAxis($axis);
+            .#{$sizeName}#{$responsiveSign}flex-#{$axis} {
+                flex-direction: $value;
+            }
+            .#{$sizeName}#{$responsiveSign}flex-#{$axis}-reverse {
+                flex-direction: #{$value}-reverse;
+            }
+        }
+
+        // flex-wrap ====================================================
+        @each $value in (wrap, wrap-reverse, nowrap) {
+            .#{$sizeName}#{$responsiveSign}flex-#{$value} {
+                flex-wrap: $value;
+            }
+        }
+
+        // flex ====================================================
+        @each $name, $value in (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none) {
+            .#{$sizeName}#{$responsiveSign}flex-#{$name} {
+                flex: $value;
+            }
+        }
+        // flex-grow, flex-shrink =======================================
+        @each $name in (grow, shrink) {
+            @for $value from 0 through 1 {
+                $nameValue: '-#{$value}';
+                @if $nameValue == '-1' {$nameValue: ''}
+                .#{$sizeName}#{$responsiveSign}flex-#{$name}#{$nameValue} {
+                    flex-#{$name}: $value;
+                }        
+            }
+        }
+
+        // order =========================================================
+        @for $i from 0 through 12 {
+            @if $i == 0 {
+                @each $name, $value in (first: -9999, last: 9999, none: 0) {
+                    .#{$sizeName}#{$responsiveSign}order-#{$name} {
+                        order: $value
+                    }
+                }
+            }
+            .#{$sizeName}#{$responsiveSign}order-#{$i} {
+                order: $i
+            }
+        }
+        // width =========================================================
+        @for $i from 1 through 12 {
+            @if $i <= 6 or $i == 12 {
+                @if $i == 1 {
+                    @each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vw) {
+                        .#{$sizeName}#{$responsiveSign}w-#{$name} {
+                            width: $value;
+                        }
+                    }
+                } @else {
+                    @for $j from 1 to $i {
+                        .#{$sizeName}#{$responsiveSign}w-#{$j}\/#{$i} {
+                            width: ($j / $i) * 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        // height =========================================================
+        @each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vh) {
+            .#{$sizeName}#{$responsiveSign}h-#{$name} {
+                height: $value;
+            }
+        }
     }
 }
 
 
 // FIXME: Responsive para solucionar el conflicto de colum-span con colum-start -----------------------------------
+// grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
 @each $sizeName,
 $size in $breakpoints {
     @media screen and (min-width: $size) {
 
         @for $i from 0 through $max-cols {
-
+            
             @each $axis in (col, row) {
                 $value: checkAxis($axis);
 
-                .#{$sizeName}#{$responsiveSign}#{$axis}-start-#{$i} {
-                    grid-#{$value}-start: $i;
+                @if $i == 0 {
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
+                        grid-#{$value}: auto;
+                    }
+                    @each $name in (start, end) {
+                        .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-13 {
+                            grid-#{$value}-#{$name}: 13;
+                        }
+                        .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-auto {
+                            grid-#{$value}-#{$name}: auto;
+                        }
+                    }
                 }
-
-                .#{$sizeName}#{$responsiveSign}#{$axis}-end-#{$i} {
-                    grid-#{$value}-end: $i;
-                }
-            }
-
-        }
-    }
-}
-
-// flex-direction =========================================
-@each $axis in (col, row) {
-    $value: checkAxis($axis);
-    .flex-#{$axis} {
-        flex-direction: $value;
-    }
-    .flex-#{$axis}-reverse {
-        flex-direction: #{$value}-reverse;
-    }
-}
-
-// flex-wrap ====================================================
-@each $value in (wrap, wrap-reverse, nowrap) {
-    .flex-#{$value} {
-        flex-wrap: $value;
-    }
-}
-
-// flex ====================================================
-@each $name, $value in (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none) {
-    .flex-#{$name} {
-        flex: $value;
-    }
-}
-// flex-grow, flex-shrink =======================================
-@each $name in (grow, shrink) {
-    @for $value from 0 through 1 {
-        $nameValue: '-#{$value}';
-        @if $nameValue == '-1' {$nameValue: ''}
-        .flex-#{$name}#{$nameValue} {
-            flex-#{$name}: $value;
-        }        
-    }
-}
-
-// order =========================================================
-@for $i from 0 through 12 {
-    @if $i == 0 {
-        @each $name, $value in (first: -9999, last: 9999, none: 0) {
-            .order-#{$name} {
-                order: $value
-            }
-        }
-    }
-    .order-#{$i} {
-        order: $i
-    }
-}
-// width =========================================================
-@for $i from 1 through 12 {
-    @if $i <= 6 or $i == 12 {
-        @if $i == 1 {
-            @each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vw) {
-                .w-#{$name} {
-                    width: $value;
-                }
-            }
-        } @else {
-
-            @for $j from 1 to $i {
-                .w-#{$j}\/#{$i} {
-                    width: ($j / $i) * 100%;
+                @each $name in (start, end) {
+                    
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-#{$i} {
+                        grid-#{$value}-#{$name}: $i;
+                    }
                 }
             }
         }
-    }
-}
-
-// height =========================================================
-@each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vh) {
-    .h-#{$name} {
-        height: $value;
     }
 }
