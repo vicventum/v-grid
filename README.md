@@ -17,7 +17,7 @@
 * ****v-inline-flex****:<br> `display: inline-flex;`
 
 ### **Gap's**
-Siendo `n` un numero del 0 al 5 representando cada unidad `1rem`:
+Siendo `n` un numero del 0 al 20 representando cada unidad `1rem`:
 * **gap-`n`**:<br> `gap: `n`rem`
 
 Ejemplo:
@@ -115,9 +115,12 @@ Siendo `n` un algunos de estos valores: (`start | end | center | stretch`)
 * **j-self-`n`**: <br> `justify-self: `n`;`
 * **a-self-`n`**: <br> `align-self: `n`;`
 
+para `align-items` también está el valor `baseline`:
+* **a-items-`n`**: <br> `align-items: baseline;`
+
 
 ### **justify-content | align-content**
-Siendo `n` un algunos de estos valores: (`start | end | center | stretch | space-around | space-between | space-evenlystart | end | center | stretch`)
+Siendo `n` un algunos de estos valores: (`start | end | center | stretch | space-around | space-between | space-evenly`)
 * **j-content-`n`**: <br> `justify-content: `n`;`
 * **a-content-`n`**: <br> `align-content: `n`;`
 

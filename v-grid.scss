@@ -64,7 +64,7 @@ $size in $breakpoints {
         }
 
         // Gap's ================================================
-        @for $i from 0 through 10 {
+        @for $i from 0 through 40 {
 
             @if round($i / 2)==$i / 2 {
 
@@ -144,12 +144,17 @@ $size in $breakpoints {
 
         // Alignment ===================================================
         // justify-items:   start | end | center | stretch;
-        // align-items:     start | end | center | stretch;
+        // align-items:     start | end | center | stretch | baseline;
         // justify-self:   start | end | center | stretch;
         // align-self:     start | end | center | stretch;
         // justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
         // align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
         @each $align in (j, a) {
+            @if $align == a {   // Caso particular para  align-items: baseline
+                .#{$sizeName}#{$responsiveSign}#{$align}-items-baseline {
+                    align-items: baseline;
+                }
+            }
             @each $mode in (items, content, self) {
                 $alignName: checkAlign($align);
 
