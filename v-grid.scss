@@ -10,6 +10,7 @@ $breakpoints: (
 // Vars
 $max-cols: 12;
 $responsiveSign: \:;
+$min-size-responsive: 250px;
 
 // Functions
 @function checkAxis($axis) {
@@ -20,7 +21,6 @@ $responsiveSign: \:;
         @else {
             @return columns;
         }
-
     }
     @else {
         @return #{$axis};
@@ -147,10 +147,10 @@ $size in $breakpoints {
         // align-items:     start | end | center | stretch | baseline;
         // justify-self:   start | end | center | stretch;
         // align-self:     start | end | center | stretch;
-        // justify-content: start | end | center | stretch | space-around | space-between | space-evenly; 
-        // align-content:   start | end | center | stretch | space-around | space-between | space-evenly;  
+        // justify-content: start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly; 
+        // align-content:   start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly;  
         @each $align in (j, a) {
-            @if $align == a {   // Caso particular para  align-items: baseline
+            @if $align == a {   // Caso particular para align-items: baseline
                 .#{$sizeName}#{$responsiveSign}#{$align}-items-baseline {
                     align-items: baseline;
                 }
@@ -158,7 +158,7 @@ $size in $breakpoints {
             @each $mode in (items, content, self) {
                 $alignName: checkAlign($align);
 
-                @each $value in (start, end, center, stretch) {
+                @each $value in (start, flex-start, end, flex-end, center, stretch) {
                     .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
                         #{$alignName}-#{$mode}: $value;
                     }
@@ -174,7 +174,13 @@ $size in $breakpoints {
             }
         }
 
-        // v-flex ==================================================
+        // responsive-grid =======================================
+        .#{$sizeName}#{$responsiveSign}responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax($min-size-responsive, 1fr));
+        }
+
+        // v-flex ------------------------------------------------------------
       
         // flex-direction =========================================
         @each $axis in (col, row) {
@@ -208,6 +214,16 @@ $size in $breakpoints {
                 .#{$sizeName}#{$responsiveSign}flex-#{$name}#{$nameValue} {
                     flex-#{$name}: $value;
                 }        
+            }
+        }
+
+        // responsive-flex ===============================================
+        .#{$sizeName}#{$responsiveSign}responsive-flex {
+            display: flex;
+            flex-wrap: wrap;
+
+            & > * {
+                flex: 1 1 $min-size-responsive;
             }
         }
 
@@ -273,6 +289,9 @@ $size in $breakpoints {
                 @if $i == 0 {
                     .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
                         grid-#{$value}: auto;
+                    }
+                    .#{$sizeName}#{$responsiveSign}#{$axis}-full {
+                        grid-#{$value}: 1 / -1;
                     }
                     @each $name in (start, end) {
                         .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-13 {
