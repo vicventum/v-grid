@@ -9,8 +9,8 @@ $breakpoints: (
 
 // Vars
 $max-cols: 12;
-$responsiveSign: \:;
 $min-size-responsive: 250px;
+$responsiveSign: \:;
 
 // Functions
 @function checkAxis($axis) {
