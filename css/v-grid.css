@@ -542,6 +542,19 @@
   .grid-flow-col-dense {
     grid-auto-flow: column dense;
   }
+  .block-center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-center {
+    text-align: center;
+  }
   .j-items-start {
     justify-items: start;
   }
@@ -590,14 +603,8 @@
   .j-self-start {
     justify-self: start;
   }
-  .j-self-flex-start {
-    justify-self: flex-start;
-  }
   .j-self-end {
     justify-self: end;
-  }
-  .j-self-flex-end {
-    justify-self: flex-end;
   }
   .j-self-center {
     justify-self: center;
@@ -1423,6 +1430,19 @@
   .m\:grid-flow-col-dense {
     grid-auto-flow: column dense;
   }
+  .m\:block-center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .m\:text-left {
+    text-align: left;
+  }
+  .m\:text-right {
+    text-align: right;
+  }
+  .m\:text-center {
+    text-align: center;
+  }
   .m\:j-items-start {
     justify-items: start;
   }
@@ -1471,14 +1491,8 @@
   .m\:j-self-start {
     justify-self: start;
   }
-  .m\:j-self-flex-start {
-    justify-self: flex-start;
-  }
   .m\:j-self-end {
     justify-self: end;
-  }
-  .m\:j-self-flex-end {
-    justify-self: flex-end;
   }
   .m\:j-self-center {
     justify-self: center;
@@ -2304,6 +2318,19 @@
   .t\:grid-flow-col-dense {
     grid-auto-flow: column dense;
   }
+  .t\:block-center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .t\:text-left {
+    text-align: left;
+  }
+  .t\:text-right {
+    text-align: right;
+  }
+  .t\:text-center {
+    text-align: center;
+  }
   .t\:j-items-start {
     justify-items: start;
   }
@@ -2352,14 +2379,8 @@
   .t\:j-self-start {
     justify-self: start;
   }
-  .t\:j-self-flex-start {
-    justify-self: flex-start;
-  }
   .t\:j-self-end {
     justify-self: end;
-  }
-  .t\:j-self-flex-end {
-    justify-self: flex-end;
   }
   .t\:j-self-center {
     justify-self: center;
@@ -3185,6 +3206,19 @@
   .l\:grid-flow-col-dense {
     grid-auto-flow: column dense;
   }
+  .l\:block-center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .l\:text-left {
+    text-align: left;
+  }
+  .l\:text-right {
+    text-align: right;
+  }
+  .l\:text-center {
+    text-align: center;
+  }
   .l\:j-items-start {
     justify-items: start;
   }
@@ -3233,14 +3267,8 @@
   .l\:j-self-start {
     justify-self: start;
   }
-  .l\:j-self-flex-start {
-    justify-self: flex-start;
-  }
   .l\:j-self-end {
     justify-self: end;
-  }
-  .l\:j-self-flex-end {
-    justify-self: flex-end;
   }
   .l\:j-self-center {
     justify-self: center;
@@ -4066,6 +4094,19 @@
   .d\:grid-flow-col-dense {
     grid-auto-flow: column dense;
   }
+  .d\:block-center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .d\:text-left {
+    text-align: left;
+  }
+  .d\:text-right {
+    text-align: right;
+  }
+  .d\:text-center {
+    text-align: center;
+  }
   .d\:j-items-start {
     justify-items: start;
   }
@@ -4114,14 +4155,8 @@
   .d\:j-self-start {
     justify-self: start;
   }
-  .d\:j-self-flex-start {
-    justify-self: flex-start;
-  }
   .d\:j-self-end {
     justify-self: end;
-  }
-  .d\:j-self-flex-end {
-    justify-self: flex-end;
   }
   .d\:j-self-center {
     justify-self: center;

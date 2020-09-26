@@ -82,6 +82,7 @@ Siendo `n` un numero del 1 al 12 o `none`
     ```css
     grid-template-rows: repeat(n, minmax(0, 1fr));
     ```
+---
 
 ### **grid-column** | **grid-row** (catidad en `span`)
 Siendo `n` un numero del 1 al 12
@@ -105,6 +106,7 @@ o auto:
     grid-row: auto;
     ```
 
+---
 
 ### **grid-column-start** | **grid-row-start** || **grid-column-end** | **grid-row-end**
 Siendo `n` un numero del 1 al 13
@@ -151,6 +153,8 @@ o full:
     ```css
     grid-column: 1 / -1;
     ```
+
+---
 
 ### **grid-auto-flow**
 * **grid-flow-row**:<br> 
@@ -272,41 +276,61 @@ O valores específicos:
 ---
 
 ## **Alineamiento**
+
+### **text-align**
+Siendo `align` algunos de estos valores: (`left | right | center`)
+- **text-`align`:**
+    ```css
+    text-align: align;
+    ```
+
+### **block-center**
+Aliena un elemento de bloque usando `margin-left: auto` y `margin-right: auto`
+- **block-center:**
+    ```css
+    margin-left: auto;
+    margin-right: auto;
+    ```
+
+---
+
 ### **justify-items | align-items | justify-self | align-self**
-Siendo `n` un algunos de estos valores: (`start | flex-start | end | flex-end  | center | stretch`)
-* **j-items-`n`**: <br> 
+Siendo `align` algunos de estos valores: (`start | flex-start | end | flex-end  | center | stretch`)
+> `j-self-flex-start` y `j-flex-flex-end` no existen debido a que las propiedades `justify-self: flex-start` y `justify-self: flex-end` no existen para un contenedor padre `flex`.
+* **j-items-`align`**: <br> 
     ```css
-    justify-items: n;
+    justify-items: align;
     ```
-* **a-items-`n`**: <br> 
+* **a-items-`align`**: <br> 
     ```css
-    align-items: n;
+    align-items: align;
     ```
-* **j-self-`n`**: <br> 
+* **j-self-`align`**: <br> 
     ```css
-    justify-self: n;
+    justify-self: align;
     ```
-* **a-self-`n`**: <br> 
+* **a-self-`align`**: <br> 
     ```css
-    align-self: n;
+    align-self: align;
     ```
 
 para `align-items` también está el valor `baseline`:
-* **a-items-`n`**: <br> 
+* **a-items-`align`**: <br> 
     ```css
     align-items: baseline;
     ```
 
+---
 
 ### **justify-content | align-content**
-Siendo `n` un algunos de estos valores: (`start | flex-start | end | flex-end | center | stretch | space-around | space-between | space-evenly`)
-* **j-content-`n`**: <br> 
+Siendo `align` algunos de estos valores: (`start | flex-start | end | flex-end | center | stretch | space-around | space-between | space-evenly`)
+* **j-content-`align`**: <br> 
     ```css
-    justify-content: n;
+    justify-content: align;
     ```
-* **a-content-`n`**: <br> 
+* **a-content-`align`**: <br> 
     ```css
-    align-content: n;
+    align-content: align;
     ```
 
 ## **Tamaño**

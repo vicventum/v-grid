@@ -9,10 +9,7 @@ $breakpoints: (
 
 // Vars
 $max-cols: 12;
-<<<<<<< HEAD
-=======
 $min-size-responsive: 250px;
->>>>>>> master
 $responsiveSign: \:;
 
 // Functions
@@ -146,12 +143,28 @@ $size in $breakpoints {
         }
 
         // Alignment ===================================================
+        // text-align: left | right | center
+        // margin-right: auto;
+        // margin-left: auto;
+
         // justify-items:   start | end | center | stretch;
         // align-items:     start | end | center | stretch | baseline;
         // justify-self:   start | end | center | stretch;
         // align-self:     start | end | center | stretch;
         // justify-content: start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly; 
         // align-content:   start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly;  
+
+        .#{$sizeName}#{$responsiveSign}block-center {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @each $align in (left, right, center) {
+            .#{$sizeName}#{$responsiveSign}text-#{$align} {
+                text-align: $align;
+            }
+        }
+
         @each $align in (j, a) {
             @if $align == a {   // Caso particular para align-items: baseline
                 .#{$sizeName}#{$responsiveSign}#{$align}-items-baseline {
@@ -162,8 +175,11 @@ $size in $breakpoints {
                 $alignName: checkAlign($align);
 
                 @each $value in (start, flex-start, end, flex-end, center, stretch) {
-                    .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
-                        #{$alignName}-#{$mode}: $value;
+                    @if ($value == flex-start or $value == flex-end) and $align == j and $mode == self {
+                    } @else {                        
+                        .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
+                            #{$alignName}-#{$mode}: $value;
+                        }
                     }
                 }
 
