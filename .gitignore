@@ -1,8 +1,8 @@
 /node_modules
-/plugins
-_core-grid copy.scss
-ed-grid.scss
 style.scss
+tailwindcss.css
+notes.scss
+notes.css
 package-lock.json
 package.json
 .vscode/

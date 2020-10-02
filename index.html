@@ -13,10 +13,48 @@
 
     
     <section><h2>v-flex:</h2></section>
-    <section class="m:v-flex j-content-between">
+    <section class="v-flex flex-col-gap-2 flex-col m:flex-col-gap-0 m:flex-row j-content-between">
         <div class="m:w-1/6">1</div>
 
-        <div class="m:w-2/6"> 2</div>
+        <div class="m:w-2/6">2</div>
+    </section>
+
+    <section class="v-grid gap-2 m:gap-0 m:grid-cols-2 j-items-between">
+        <div class="m:w-1/3">1</div>
+
+        <div class="m:w-4/6 m:j-self-end">2</div>
+    </section>
+
+    <section class="m:v-grid j-content-between" style="grid-template-columns: 22% 38%;">
+        <div>1</div>
+
+        <div>2</div>
+    </section>
+
+    <section class="v-flex  row-space-2 t:flex-row-reverse t:space-reverse 
+        d:row-space-auto">
+        <div class="w-1/6"></div>
+        <div class="w-1/6"></div>
+        <div class="w-1/6"></div>
+    </section>
+    <section class="v-flex  row-space-2 ">
+        <div class="w-1/6"></div>
+        <div class="w-1/6"></div>
+        <div class="w-1/6"></div>
+    </section>
+
+    <section class=" w-1/3 col-space-2" style="background-color: #222;">
+        <div class="">0</div>
+        <div class="">0</div>
+        <div class="">0</div>
+    </section>
+    <section class="v-flex  w-1/2 row-space-1" style="gap: 32px; background-color: #222;">
+        <div class="">0</div>
+        <div class="">0</div>
+        <div class="">0</div>
+        <div class="">0</div>
+        <div class="">0</div>
+        <div class="">0</div>
     </section>
 
     <section><h2>v-grid:</h2></section>

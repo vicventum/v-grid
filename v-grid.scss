@@ -1,11 +1,9 @@
 // Breakpoints
-$breakpoints: (
-    '': 0, // Mantener en 0
-    m: 640px,
-    t: 768px,
-    l: 1024px,
-    d: 1280px
-) !default;
+$breakpoints: ('': 0, // Mantener en 0
+  m: 640px,
+  t: 768px,
+  l: 1024px,
+  d: 1280px) !default;
 
 // Vars
 $max-cols: 12;
@@ -14,277 +12,356 @@ $responsiveSign: \:;
 
 // Functions
 @function checkAxis($axis) {
-    @if $axis==col or $axis==cols {
-        @if $axis==col {
-            @return column;
-        }
-        @else {
-            @return columns;
-        }
+  @if $axis==col or $axis==cols {
+    @if $axis==col {
+      @return column;
     }
+
     @else {
-        @return #{$axis};
+      @return columns;
     }
+  }
+
+  @else {
+    @return #{$axis};
+  }
 }
 
 @function checkAlign($align) {
-    @if $align==j {
-        @return justify;
-    }
-    @else {
-        @return align;
-    }
+  @if $align==j {
+    @return justify;
+  }
+
+  @else {
+    @return align;
+  }
+}
+
+@mixin flexGapCondicional($axis ,$i) {
+  --reverse: 0; 
+  @if $axis == row {
+    margin-right: calc(#{($i / 2) * 1rem} * var(--reverse));
+    margin-left: calc(#{($i / 2) * 1rem} * calc(1 - var(--reverse)));              
+  } @else {
+    margin-bottom: calc(#{($i / 2) * 1rem} * var(--reverse));
+    margin-top: calc(#{($i / 2) * 1rem} * calc(1 - var(--reverse)));
+  }
 }
 
 
 // Responsive -----------------------------------
 @each $sizeName,
 $size in $breakpoints {
-    @media screen and (min-width: $size) {
-        @if $sizeName=='' {
-            $responsiveSign: '';
-        }
-        @else {
-            $responsiveSign: \:;
-        }
-
-        // Display ==========================================
-        .#{$sizeName}#{$responsiveSign}v-inline-grid {
-            display: inline-grid;
-        }
-
-        .#{$sizeName}#{$responsiveSign}v-grid {
-            display: grid;
-        }
-        .#{$sizeName}#{$responsiveSign}v-inline-flex {
-            display: inline-flex;
-        }
-        .#{$sizeName}#{$responsiveSign}v-flex {
-            display: flex;
-        }
-
-        // Gap's ================================================
-        @for $i from 0 through 40 {
-
-            @if round($i / 2)==$i / 2 {
-
-                // Comprueba si es decimal
-                .#{$sizeName}#{$responsiveSign}gap-#{$i / 2} {
-                    gap: ($i / 2) * 1rem;
-                }
-
-                .#{$sizeName}#{$responsiveSign}col-gap-#{$i / 2} {
-                    column-gap: ($i / 2) * 1rem;
-                }
-
-                .#{$sizeName}#{$responsiveSign}row-gap-#{$i / 2} {
-                    row-gap: ($i / 2) * 1rem;
-                }
-
-            }@else {
-
-                $var: round($i / 2) - 1;
-
-                .#{$sizeName}#{$responsiveSign}gap-#{$var}\,5 {
-                    gap: ($i / 2) * 1rem;
-                }
-
-                .#{$sizeName}#{$responsiveSign}col-gap-#{$var}\,5 {
-                    column-gap: ($i / 2) * 1rem;
-                }
-
-                .#{$sizeName}#{$responsiveSign}row-gap-#{$var}\,5 {
-                    row-gap: ($i / 2) * 1rem;
-                }
-            }
-        }
-
-        // grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
-        @for $i from 0 through $max-cols {
-
-            // grid-template-colums grid-template-rows 
-            @each $axis in (cols, rows) {
-                $value: checkAxis($axis);
-
-                @if $i==0 {
-                    .#{$sizeName}#{$responsiveSign}grid-#{$axis}-none {
-                        grid-template-#{$value}: none;
-                    }
-                } @else {
-                    .#{$sizeName}#{$responsiveSign}grid-#{$axis}-#{$i} {
-                        grid-template-#{$value}: repeat($i, minmax(0, 1fr));
-                    }
-                }
-            }
-
-            // grid-span
-            @each $axis in (col, row) {
-                $value: checkAxis($axis);
-
-                @if $i > 0 {
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
-                        grid-#{$value}: span $i / span $i;
-                    }
-                }
-            }
-        }
-
-        // grid-auto-flow =====================================
-        @each $axis in (row, col) {
-            $value: checkAxis($axis);
-
-            .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis} {
-                grid-auto-flow: #{$value};
-            }
-
-            .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis}-dense {
-                grid-auto-flow: #{$value} dense;
-            }
-        }
-
-        // Alignment ===================================================
-        // text-align: left | right | center
-        // margin-right: auto;
-        // margin-left: auto;
-
-        // justify-items:   start | end | center | stretch;
-        // align-items:     start | end | center | stretch | baseline;
-        // justify-self:   start | end | center | stretch;
-        // align-self:     start | end | center | stretch;
-        // justify-content: start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly; 
-        // align-content:   start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly;  
-
-        .#{$sizeName}#{$responsiveSign}block-center {
-            margin-right: auto;
-            margin-left: auto;
-        }
-
-        @each $align in (left, right, center) {
-            .#{$sizeName}#{$responsiveSign}text-#{$align} {
-                text-align: $align;
-            }
-        }
-
-        @each $align in (j, a) {
-            @if $align == a {   // Caso particular para align-items: baseline
-                .#{$sizeName}#{$responsiveSign}#{$align}-items-baseline {
-                    align-items: baseline;
-                }
-            }
-            @each $mode in (items, content, self) {
-                $alignName: checkAlign($align);
-
-                @each $value in (start, flex-start, end, flex-end, center, stretch) {
-                    @if ($value == flex-start or $value == flex-end) and $align == j and $mode == self {
-                    } @else {                        
-                        .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
-                            #{$alignName}-#{$mode}: $value;
-                        }
-                    }
-                }
-
-                @if $mode==content {
-                    @each $value in (around, between, evenly) {
-                        .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
-                            #{$alignName}-#{$mode}: space-#{$value};
-                        }
-                    }
-                }
-            }
-        }
-
-        // responsive-grid =======================================
-        .#{$sizeName}#{$responsiveSign}responsive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax($min-size-responsive, 1fr));
-        }
-
-        // v-flex ------------------------------------------------------------
-      
-        // flex-direction =========================================
-        @each $axis in (col, row) {
-            $value: checkAxis($axis);
-            .#{$sizeName}#{$responsiveSign}flex-#{$axis} {
-                flex-direction: $value;
-            }
-            .#{$sizeName}#{$responsiveSign}flex-#{$axis}-reverse {
-                flex-direction: #{$value}-reverse;
-            }
-        }
-
-        // flex-wrap ====================================================
-        @each $value in (wrap, wrap-reverse, nowrap) {
-            .#{$sizeName}#{$responsiveSign}flex-#{$value} {
-                flex-wrap: $value;
-            }
-        }
-
-        // flex ====================================================
-        @each $name, $value in (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none) {
-            .#{$sizeName}#{$responsiveSign}flex-#{$name} {
-                flex: $value;
-            }
-        }
-        // flex-grow, flex-shrink =======================================
-        @each $name in (grow, shrink) {
-            @for $value from 0 through 1 {
-                $nameValue: '-#{$value}';
-                @if $nameValue == '-1' {$nameValue: ''}
-                .#{$sizeName}#{$responsiveSign}flex-#{$name}#{$nameValue} {
-                    flex-#{$name}: $value;
-                }        
-            }
-        }
-
-        // responsive-flex ===============================================
-        .#{$sizeName}#{$responsiveSign}responsive-flex {
-            display: flex;
-            flex-wrap: wrap;
-
-            & > * {
-                flex: 1 1 $min-size-responsive;
-            }
-        }
-
-        // order =========================================================
-        @for $i from 0 through 12 {
-            @if $i == 0 {
-                @each $name, $value in (first: -9999, last: 9999, none: 0) {
-                    .#{$sizeName}#{$responsiveSign}order-#{$name} {
-                        order: $value
-                    }
-                }
-            }
-            .#{$sizeName}#{$responsiveSign}order-#{$i} {
-                order: $i
-            }
-        }
-        // width =========================================================
-        @for $i from 1 through 12 {
-            @if $i <= 6 or $i == 12 {
-                @if $i == 1 {
-                    @each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vw) {
-                        .#{$sizeName}#{$responsiveSign}w-#{$name} {
-                            width: $value;
-                        }
-                    }
-                } @else {
-                    @for $j from 1 to $i {
-                        .#{$sizeName}#{$responsiveSign}w-#{$j}\/#{$i} {
-                            width: ($j / $i) * 100%;
-                        }
-                    }
-                }
-            }
-        }
-
-        // height =========================================================
-        @each $name, $value in (0: 0, auto: auto, full: 100%, screen: 100vh) {
-            .#{$sizeName}#{$responsiveSign}h-#{$name} {
-                height: $value;
-            }
-        }
+  @media screen and (min-width: $size) {
+    @if $sizeName=='' {
+      $responsiveSign: '';
     }
+
+    @else {
+      $responsiveSign: \:;
+    }
+
+    // Display ==========================================
+    .#{$sizeName}#{$responsiveSign}v-inline-grid {
+      display: inline-grid;
+    }
+
+    .#{$sizeName}#{$responsiveSign}v-grid {
+      display: grid;
+    }
+
+    .#{$sizeName}#{$responsiveSign}v-inline-flex {
+      display: inline-flex;
+    }
+
+    .#{$sizeName}#{$responsiveSign}v-flex {
+      display: flex;
+    }
+
+    // Gap's ================================================
+    @for $i from 0 through 40 {
+
+      @if round($i / 2)==$i / 2 {
+
+        // Comprueba si es decimal
+        .#{$sizeName}#{$responsiveSign}gap-#{$i / 2} {
+          gap: ($i / 2) * 1rem;
+        }
+
+        .#{$sizeName}#{$responsiveSign}col-gap-#{$i / 2} {
+          column-gap: ($i / 2) * 1rem;
+        }
+
+        .#{$sizeName}#{$responsiveSign}row-gap-#{$i / 2} {
+          row-gap: ($i / 2) * 1rem;
+        }
+
+      }
+
+      @else {
+
+        $var: round($i / 2) - 1;
+
+        .#{$sizeName}#{$responsiveSign}gap-#{$var}\,5 {
+          gap: ($i / 2) * 1rem;
+        }
+
+        .#{$sizeName}#{$responsiveSign}col-gap-#{$var}\,5 {
+          column-gap: ($i / 2) * 1rem;
+        }
+
+        .#{$sizeName}#{$responsiveSign}row-gap-#{$var}\,5 {
+          row-gap: ($i / 2) * 1rem;
+        }
+      }
+    }
+
+    // Flex Gap's ================================================
+    @for $i from 0 through 40 {
+
+      @if round($i / 2)==$i / 2 {
+        // Comprueba si es decimal
+
+        @each $axis in (row, col) {
+          .#{$sizeName}#{$responsiveSign}#{$axis}-space-#{$i / 2} > * + * {
+            @include flexGapCondicional($axis, $i);
+          }
+        }
+      } @else {
+        $var: round($i / 2) - 1;
+
+        @each $axis in (row, col) {
+          .#{$sizeName}#{$responsiveSign}#{$axis}-space-#{$var}\,5 > * + * {
+            @include flexGapCondicional($axis, $i);
+          }
+        }
+      }
+    }
+    @each $option in (initial, auto) {
+      @each $axis in (row, col) {
+        .#{$sizeName}#{$responsiveSign}#{$axis}-space-#{$option} > * + * {
+          // --auto-reverse: 0 0 0 #{$option};
+          @if $axis == row {
+            --x-#{$option}: 0 0 0 #{$option};
+            margin: var(--x-#{$option})
+          } @else {
+            --y-#{$option}: #{$option} 0 0 0;
+            margin: var(--y-#{$option})
+          }
+        }
+      }
+    }
+    
+
+    // grid-template-colums grid-template-rows  | grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
+    @for $i from 0 through $max-cols {
+
+      // grid-template-colums grid-template-rows 
+      @each $axis in (cols, rows) {
+        $value: checkAxis($axis);
+
+        @if $i==0 {
+          .#{$sizeName}#{$responsiveSign}grid-#{$axis}-none {
+            grid-template-#{$value}: none;
+          }
+        }
+
+        @else {
+          .#{$sizeName}#{$responsiveSign}grid-#{$axis}-#{$i} {
+            grid-template-#{$value}: repeat($i, minmax(0, 1fr));
+          }
+        }
+      }
+
+      // grid-span
+      @each $axis in (col, row) {
+        $value: checkAxis($axis);
+
+        @if $i>0 {
+          .#{$sizeName}#{$responsiveSign}#{$axis}-span-#{$i} {
+            grid-#{$value}: span $i / span $i;
+          }
+        }
+      }
+    }
+
+    // grid-auto-flow =====================================
+    @each $axis in (row, col) {
+      $value: checkAxis($axis);
+
+      .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis} {
+        grid-auto-flow: #{$value};
+      }
+
+      .#{$sizeName}#{$responsiveSign}grid-flow-#{$axis}-dense {
+        grid-auto-flow: #{$value} dense;
+      }
+    }
+
+    // Alignment ===================================================
+    // text-align: left | right | center
+    // margin-right: auto;
+    // margin-left: auto;
+
+    // justify-items:   start | end | center | stretch;
+    // align-items:     start | end | center | stretch | baseline;
+    // justify-self:   start | end | center | stretch;
+    // align-self:     start | end | center | stretch;
+    // justify-content: start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly; 
+    // align-content:   start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly;  
+
+    .#{$sizeName}#{$responsiveSign}block-center {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @each $align in (left, right, center) {
+      .#{$sizeName}#{$responsiveSign}text-#{$align} {
+        text-align: $align;
+      }
+    }
+
+    @each $align in (j, a) {
+      @if $align==a {
+
+        // Caso particular para align-items: baseline
+        .#{$sizeName}#{$responsiveSign}#{$align}-items-baseline {
+          align-items: baseline;
+        }
+      }
+
+      @each $mode in (items, content, self) {
+        $alignName: checkAlign($align);
+
+        @each $value in (start, flex-start, end, flex-end, center, stretch) {
+          @if ($value==flex-start or $value==flex-end) and $align==j and $mode==self {}
+
+          @else {
+            .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
+              #{$alignName}-#{$mode}: $value;
+            }
+          }
+        }
+
+        @if $mode==content {
+          @each $value in (around, between, evenly) {
+            .#{$sizeName}#{$responsiveSign}#{$align}-#{$mode}-#{$value} {
+              #{$alignName}-#{$mode}: space-#{$value};
+            }
+          }
+        }
+      }
+    }
+
+    // responsive-grid =======================================
+    .#{$sizeName}#{$responsiveSign}responsive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax($min-size-responsive, 1fr));
+    }
+
+    // v-flex ------------------------------------------------------------
+
+    // flex-direction =========================================
+    @each $axis in (col, row) {
+      $value: checkAxis($axis);
+
+      .#{$sizeName}#{$responsiveSign}flex-#{$axis} {
+        flex-direction: $value;
+      }
+
+      .#{$sizeName}#{$responsiveSign}flex-#{$axis}-reverse {
+        flex-direction: #{$value}-reverse;
+      }
+    }
+
+    // flex-wrap ====================================================
+    @each $value in (wrap, wrap-reverse, nowrap) {
+      .#{$sizeName}#{$responsiveSign}flex-#{$value} {
+        flex-wrap: $value;
+      }
+    }
+
+    // flex ====================================================
+    @each $name,
+    $value in (1: 1 1 0%, auto: 1 1 auto, initial: 0 1 auto, none: none) {
+      .#{$sizeName}#{$responsiveSign}flex-#{$name} {
+        flex: $value;
+      }
+    }
+
+    // flex-grow, flex-shrink =======================================
+    @each $name in (grow, shrink) {
+      @for $value from 0 through 1 {
+        $nameValue: '-#{$value}';
+
+        @if $nameValue=='-1' {
+          $nameValue: ''
+        }
+
+        .#{$sizeName}#{$responsiveSign}flex-#{$name}#{$nameValue} {
+          flex-#{$name}: $value;
+        }
+      }
+    }
+
+    // responsive-flex ===============================================
+    .#{$sizeName}#{$responsiveSign}responsive-flex {
+      display: flex;
+      flex-wrap: wrap;
+
+      &>* {
+        flex: 1 1 $min-size-responsive;
+      }
+    }
+
+    // order =========================================================
+    @for $i from 0 through 12 {
+      @if $i==0 {
+
+        @each $name,
+        $value in (first: -9999, last: 9999, none: 0) {
+          .#{$sizeName}#{$responsiveSign}order-#{$name} {
+            order: $value
+          }
+        }
+      }
+
+      .#{$sizeName}#{$responsiveSign}order-#{$i} {
+        order: $i
+      }
+    }
+
+    // width =========================================================
+    @for $i from 1 through 12 {
+      @if $i <=6 or $i==12 {
+        @if $i==1 {
+
+          @each $name,
+          $value in (0: 0, auto: auto, full: 100%, screen: 100vw) {
+            .#{$sizeName}#{$responsiveSign}w-#{$name} {
+              width: $value;
+            }
+          }
+        }
+
+        @else {
+          @for $j from 1 to $i {
+            .#{$sizeName}#{$responsiveSign}w-#{$j}\/#{$i} {
+              width: ($j / $i) * 100%;
+            }
+          }
+        }
+      }
+    }
+
+    // height =========================================================
+    @each $name,
+    $value in (0: 0, auto: auto, full: 100%, screen: 100vh) {
+      .#{$sizeName}#{$responsiveSign}h-#{$name} {
+        height: $value;
+      }
+    }
+  }
 }
 
 
@@ -292,42 +369,55 @@ $size in $breakpoints {
 // grid-column, grid-column-start, grid-column-end, grid-row, grid-row-start, grid-row-end
 @each $sizeName,
 $size in $breakpoints {
-    @media screen and (min-width: $size) {
-        @if $sizeName=='' {
-            $responsiveSign: '';
-        }
-        @else {
-            $responsiveSign: \:;
-        }
-        
-        @for $i from 0 through $max-cols {
-            
-            @each $axis in (col, row) {
-                $value: checkAxis($axis);
-
-                @if $i == 0 {
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
-                        grid-#{$value}: auto;
-                    }
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-full {
-                        grid-#{$value}: 1 / -1;
-                    }
-                    @each $name in (start, end) {
-                        .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-13 {
-                            grid-#{$value}-#{$name}: 13;
-                        }
-                        .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-auto {
-                            grid-#{$value}-#{$name}: auto;
-                        }
-                    }
-                }
-                @each $name in (start, end) {
-                    
-                    .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-#{$i} {
-                        grid-#{$value}-#{$name}: $i;
-                    }
-                }
-            }
-        }
+  @media screen and (min-width: $size) {
+    @if $sizeName=='' {
+      $responsiveSign: '';
     }
+
+    @else {
+      $responsiveSign: \:;
+    }
+
+    @for $i from 0 through $max-cols {
+
+      @each $axis in (col, row) {
+        $value: checkAxis($axis);
+
+        @if $i==0 {
+          .#{$sizeName}#{$responsiveSign}#{$axis}-auto {
+            grid-#{$value}: auto;
+          }
+
+          .#{$sizeName}#{$responsiveSign}#{$axis}-full {
+            grid-#{$value}: 1 / -1;
+          }
+
+          @each $name in (start, end) {
+            .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-13 {
+              grid-#{$value}-#{$name}: 13;
+            }
+
+            .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-auto {
+              grid-#{$value}-#{$name}: auto;
+            }
+          }
+        }
+
+        @each $name in (start, end) {
+
+          .#{$sizeName}#{$responsiveSign}#{$axis}-#{$name}-#{$i} {
+            grid-#{$value}-#{$name}: $i;
+          }
+        }
+      }
+    }
+
+    .#{$sizeName}#{$responsiveSign}space-reverse > * + * {
+      --reverse: 1;
+      @each $option in (initial, auto) {
+        --x-#{$option}: 0 #{$option} 0 0;
+        --y-#{$option}: 0 0 #{$option} 0;
+      }
+    }
+  }
 }

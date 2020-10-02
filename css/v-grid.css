@@ -380,6 +380,432 @@
   .row-gap-20 {
     row-gap: 20rem;
   }
+  .row-space-0 > * + * {
+    --reverse: 0;
+    margin-right: calc(0rem * var(--reverse));
+    margin-left: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .col-space-0 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0rem * var(--reverse));
+    margin-top: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .row-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(0.5rem * var(--reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0.5rem * var(--reverse));
+    margin-top: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-1 > * + * {
+    --reverse: 0;
+    margin-right: calc(1rem * var(--reverse));
+    margin-left: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .col-space-1 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1rem * var(--reverse));
+    margin-top: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .row-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(1.5rem * var(--reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1.5rem * var(--reverse));
+    margin-top: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-2 > * + * {
+    --reverse: 0;
+    margin-right: calc(2rem * var(--reverse));
+    margin-left: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .col-space-2 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2rem * var(--reverse));
+    margin-top: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .row-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(2.5rem * var(--reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2.5rem * var(--reverse));
+    margin-top: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-3 > * + * {
+    --reverse: 0;
+    margin-right: calc(3rem * var(--reverse));
+    margin-left: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .col-space-3 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3rem * var(--reverse));
+    margin-top: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .row-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(3.5rem * var(--reverse));
+    margin-left: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3.5rem * var(--reverse));
+    margin-top: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-4 > * + * {
+    --reverse: 0;
+    margin-right: calc(4rem * var(--reverse));
+    margin-left: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .col-space-4 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4rem * var(--reverse));
+    margin-top: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .row-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(4.5rem * var(--reverse));
+    margin-left: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4.5rem * var(--reverse));
+    margin-top: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5rem * var(--reverse));
+    margin-left: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5rem * var(--reverse));
+    margin-top: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5.5rem * var(--reverse));
+    margin-left: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5.5rem * var(--reverse));
+    margin-top: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-6 > * + * {
+    --reverse: 0;
+    margin-right: calc(6rem * var(--reverse));
+    margin-left: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .col-space-6 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6rem * var(--reverse));
+    margin-top: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .row-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(6.5rem * var(--reverse));
+    margin-left: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6.5rem * var(--reverse));
+    margin-top: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-7 > * + * {
+    --reverse: 0;
+    margin-right: calc(7rem * var(--reverse));
+    margin-left: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .col-space-7 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7rem * var(--reverse));
+    margin-top: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .row-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(7.5rem * var(--reverse));
+    margin-left: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7.5rem * var(--reverse));
+    margin-top: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-8 > * + * {
+    --reverse: 0;
+    margin-right: calc(8rem * var(--reverse));
+    margin-left: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .col-space-8 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8rem * var(--reverse));
+    margin-top: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .row-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(8.5rem * var(--reverse));
+    margin-left: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8.5rem * var(--reverse));
+    margin-top: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-9 > * + * {
+    --reverse: 0;
+    margin-right: calc(9rem * var(--reverse));
+    margin-left: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .col-space-9 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9rem * var(--reverse));
+    margin-top: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .row-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(9.5rem * var(--reverse));
+    margin-left: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9.5rem * var(--reverse));
+    margin-top: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-10 > * + * {
+    --reverse: 0;
+    margin-right: calc(10rem * var(--reverse));
+    margin-left: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .col-space-10 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10rem * var(--reverse));
+    margin-top: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .row-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(10.5rem * var(--reverse));
+    margin-left: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10.5rem * var(--reverse));
+    margin-top: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-11 > * + * {
+    --reverse: 0;
+    margin-right: calc(11rem * var(--reverse));
+    margin-left: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .col-space-11 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11rem * var(--reverse));
+    margin-top: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .row-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(11.5rem * var(--reverse));
+    margin-left: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11.5rem * var(--reverse));
+    margin-top: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-12 > * + * {
+    --reverse: 0;
+    margin-right: calc(12rem * var(--reverse));
+    margin-left: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .col-space-12 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12rem * var(--reverse));
+    margin-top: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .row-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(12.5rem * var(--reverse));
+    margin-left: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12.5rem * var(--reverse));
+    margin-top: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-13 > * + * {
+    --reverse: 0;
+    margin-right: calc(13rem * var(--reverse));
+    margin-left: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .col-space-13 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13rem * var(--reverse));
+    margin-top: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .row-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(13.5rem * var(--reverse));
+    margin-left: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13.5rem * var(--reverse));
+    margin-top: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-14 > * + * {
+    --reverse: 0;
+    margin-right: calc(14rem * var(--reverse));
+    margin-left: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .col-space-14 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14rem * var(--reverse));
+    margin-top: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .row-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(14.5rem * var(--reverse));
+    margin-left: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14.5rem * var(--reverse));
+    margin-top: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-15 > * + * {
+    --reverse: 0;
+    margin-right: calc(15rem * var(--reverse));
+    margin-left: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .col-space-15 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15rem * var(--reverse));
+    margin-top: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .row-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(15.5rem * var(--reverse));
+    margin-left: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15.5rem * var(--reverse));
+    margin-top: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-16 > * + * {
+    --reverse: 0;
+    margin-right: calc(16rem * var(--reverse));
+    margin-left: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .col-space-16 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16rem * var(--reverse));
+    margin-top: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .row-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(16.5rem * var(--reverse));
+    margin-left: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16.5rem * var(--reverse));
+    margin-top: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-17 > * + * {
+    --reverse: 0;
+    margin-right: calc(17rem * var(--reverse));
+    margin-left: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .col-space-17 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17rem * var(--reverse));
+    margin-top: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .row-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(17.5rem * var(--reverse));
+    margin-left: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17.5rem * var(--reverse));
+    margin-top: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-18 > * + * {
+    --reverse: 0;
+    margin-right: calc(18rem * var(--reverse));
+    margin-left: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .col-space-18 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18rem * var(--reverse));
+    margin-top: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .row-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(18.5rem * var(--reverse));
+    margin-left: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18.5rem * var(--reverse));
+    margin-top: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-19 > * + * {
+    --reverse: 0;
+    margin-right: calc(19rem * var(--reverse));
+    margin-left: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .col-space-19 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19rem * var(--reverse));
+    margin-top: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .row-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(19.5rem * var(--reverse));
+    margin-left: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .col-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19.5rem * var(--reverse));
+    margin-top: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .row-space-20 > * + * {
+    --reverse: 0;
+    margin-right: calc(20rem * var(--reverse));
+    margin-left: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .col-space-20 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(20rem * var(--reverse));
+    margin-top: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .row-space-initial > * + * {
+    --x-initial: 0 0 0 initial;
+    margin: var(--x-initial);
+  }
+  .col-space-initial > * + * {
+    --y-initial: initial 0 0 0;
+    margin: var(--y-initial);
+  }
+  .row-space-auto > * + * {
+    --x-auto: 0 0 0 auto;
+    margin: var(--x-auto);
+  }
+  .col-space-auto > * + * {
+    --y-auto: auto 0 0 0;
+    margin: var(--y-auto);
+  }
   .grid-cols-none {
     grid-template-columns: none;
   }
@@ -1267,6 +1693,432 @@
   }
   .m\:row-gap-20 {
     row-gap: 20rem;
+  }
+  .m\:row-space-0 > * + * {
+    --reverse: 0;
+    margin-right: calc(0rem * var(--reverse));
+    margin-left: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-0 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0rem * var(--reverse));
+    margin-top: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(0.5rem * var(--reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0.5rem * var(--reverse));
+    margin-top: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-1 > * + * {
+    --reverse: 0;
+    margin-right: calc(1rem * var(--reverse));
+    margin-left: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-1 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1rem * var(--reverse));
+    margin-top: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(1.5rem * var(--reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1.5rem * var(--reverse));
+    margin-top: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-2 > * + * {
+    --reverse: 0;
+    margin-right: calc(2rem * var(--reverse));
+    margin-left: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-2 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2rem * var(--reverse));
+    margin-top: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(2.5rem * var(--reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2.5rem * var(--reverse));
+    margin-top: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-3 > * + * {
+    --reverse: 0;
+    margin-right: calc(3rem * var(--reverse));
+    margin-left: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-3 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3rem * var(--reverse));
+    margin-top: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(3.5rem * var(--reverse));
+    margin-left: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3.5rem * var(--reverse));
+    margin-top: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-4 > * + * {
+    --reverse: 0;
+    margin-right: calc(4rem * var(--reverse));
+    margin-left: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-4 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4rem * var(--reverse));
+    margin-top: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(4.5rem * var(--reverse));
+    margin-left: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4.5rem * var(--reverse));
+    margin-top: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5rem * var(--reverse));
+    margin-left: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5rem * var(--reverse));
+    margin-top: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5.5rem * var(--reverse));
+    margin-left: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5.5rem * var(--reverse));
+    margin-top: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-6 > * + * {
+    --reverse: 0;
+    margin-right: calc(6rem * var(--reverse));
+    margin-left: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-6 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6rem * var(--reverse));
+    margin-top: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(6.5rem * var(--reverse));
+    margin-left: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6.5rem * var(--reverse));
+    margin-top: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-7 > * + * {
+    --reverse: 0;
+    margin-right: calc(7rem * var(--reverse));
+    margin-left: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-7 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7rem * var(--reverse));
+    margin-top: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(7.5rem * var(--reverse));
+    margin-left: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7.5rem * var(--reverse));
+    margin-top: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-8 > * + * {
+    --reverse: 0;
+    margin-right: calc(8rem * var(--reverse));
+    margin-left: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-8 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8rem * var(--reverse));
+    margin-top: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(8.5rem * var(--reverse));
+    margin-left: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8.5rem * var(--reverse));
+    margin-top: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-9 > * + * {
+    --reverse: 0;
+    margin-right: calc(9rem * var(--reverse));
+    margin-left: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-9 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9rem * var(--reverse));
+    margin-top: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(9.5rem * var(--reverse));
+    margin-left: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9.5rem * var(--reverse));
+    margin-top: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-10 > * + * {
+    --reverse: 0;
+    margin-right: calc(10rem * var(--reverse));
+    margin-left: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-10 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10rem * var(--reverse));
+    margin-top: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(10.5rem * var(--reverse));
+    margin-left: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10.5rem * var(--reverse));
+    margin-top: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-11 > * + * {
+    --reverse: 0;
+    margin-right: calc(11rem * var(--reverse));
+    margin-left: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-11 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11rem * var(--reverse));
+    margin-top: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(11.5rem * var(--reverse));
+    margin-left: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11.5rem * var(--reverse));
+    margin-top: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-12 > * + * {
+    --reverse: 0;
+    margin-right: calc(12rem * var(--reverse));
+    margin-left: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-12 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12rem * var(--reverse));
+    margin-top: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(12.5rem * var(--reverse));
+    margin-left: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12.5rem * var(--reverse));
+    margin-top: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-13 > * + * {
+    --reverse: 0;
+    margin-right: calc(13rem * var(--reverse));
+    margin-left: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-13 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13rem * var(--reverse));
+    margin-top: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(13.5rem * var(--reverse));
+    margin-left: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13.5rem * var(--reverse));
+    margin-top: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-14 > * + * {
+    --reverse: 0;
+    margin-right: calc(14rem * var(--reverse));
+    margin-left: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-14 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14rem * var(--reverse));
+    margin-top: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(14.5rem * var(--reverse));
+    margin-left: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14.5rem * var(--reverse));
+    margin-top: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-15 > * + * {
+    --reverse: 0;
+    margin-right: calc(15rem * var(--reverse));
+    margin-left: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-15 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15rem * var(--reverse));
+    margin-top: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(15.5rem * var(--reverse));
+    margin-left: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15.5rem * var(--reverse));
+    margin-top: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-16 > * + * {
+    --reverse: 0;
+    margin-right: calc(16rem * var(--reverse));
+    margin-left: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-16 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16rem * var(--reverse));
+    margin-top: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(16.5rem * var(--reverse));
+    margin-left: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16.5rem * var(--reverse));
+    margin-top: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-17 > * + * {
+    --reverse: 0;
+    margin-right: calc(17rem * var(--reverse));
+    margin-left: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-17 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17rem * var(--reverse));
+    margin-top: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(17.5rem * var(--reverse));
+    margin-left: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17.5rem * var(--reverse));
+    margin-top: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-18 > * + * {
+    --reverse: 0;
+    margin-right: calc(18rem * var(--reverse));
+    margin-left: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-18 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18rem * var(--reverse));
+    margin-top: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(18.5rem * var(--reverse));
+    margin-left: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18.5rem * var(--reverse));
+    margin-top: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-19 > * + * {
+    --reverse: 0;
+    margin-right: calc(19rem * var(--reverse));
+    margin-left: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-19 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19rem * var(--reverse));
+    margin-top: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(19.5rem * var(--reverse));
+    margin-left: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19.5rem * var(--reverse));
+    margin-top: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-20 > * + * {
+    --reverse: 0;
+    margin-right: calc(20rem * var(--reverse));
+    margin-left: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .m\:col-space-20 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(20rem * var(--reverse));
+    margin-top: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .m\:row-space-initial > * + * {
+    --x-initial: 0 0 0 initial;
+    margin: var(--x-initial);
+  }
+  .m\:col-space-initial > * + * {
+    --y-initial: initial 0 0 0;
+    margin: var(--y-initial);
+  }
+  .m\:row-space-auto > * + * {
+    --x-auto: 0 0 0 auto;
+    margin: var(--x-auto);
+  }
+  .m\:col-space-auto > * + * {
+    --y-auto: auto 0 0 0;
+    margin: var(--y-auto);
   }
   .m\:grid-cols-none {
     grid-template-columns: none;
@@ -2156,6 +3008,432 @@
   .t\:row-gap-20 {
     row-gap: 20rem;
   }
+  .t\:row-space-0 > * + * {
+    --reverse: 0;
+    margin-right: calc(0rem * var(--reverse));
+    margin-left: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-0 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0rem * var(--reverse));
+    margin-top: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(0.5rem * var(--reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0.5rem * var(--reverse));
+    margin-top: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-1 > * + * {
+    --reverse: 0;
+    margin-right: calc(1rem * var(--reverse));
+    margin-left: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-1 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1rem * var(--reverse));
+    margin-top: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(1.5rem * var(--reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1.5rem * var(--reverse));
+    margin-top: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-2 > * + * {
+    --reverse: 0;
+    margin-right: calc(2rem * var(--reverse));
+    margin-left: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-2 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2rem * var(--reverse));
+    margin-top: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(2.5rem * var(--reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2.5rem * var(--reverse));
+    margin-top: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-3 > * + * {
+    --reverse: 0;
+    margin-right: calc(3rem * var(--reverse));
+    margin-left: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-3 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3rem * var(--reverse));
+    margin-top: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(3.5rem * var(--reverse));
+    margin-left: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3.5rem * var(--reverse));
+    margin-top: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-4 > * + * {
+    --reverse: 0;
+    margin-right: calc(4rem * var(--reverse));
+    margin-left: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-4 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4rem * var(--reverse));
+    margin-top: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(4.5rem * var(--reverse));
+    margin-left: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4.5rem * var(--reverse));
+    margin-top: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5rem * var(--reverse));
+    margin-left: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5rem * var(--reverse));
+    margin-top: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5.5rem * var(--reverse));
+    margin-left: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5.5rem * var(--reverse));
+    margin-top: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-6 > * + * {
+    --reverse: 0;
+    margin-right: calc(6rem * var(--reverse));
+    margin-left: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-6 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6rem * var(--reverse));
+    margin-top: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(6.5rem * var(--reverse));
+    margin-left: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6.5rem * var(--reverse));
+    margin-top: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-7 > * + * {
+    --reverse: 0;
+    margin-right: calc(7rem * var(--reverse));
+    margin-left: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-7 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7rem * var(--reverse));
+    margin-top: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(7.5rem * var(--reverse));
+    margin-left: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7.5rem * var(--reverse));
+    margin-top: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-8 > * + * {
+    --reverse: 0;
+    margin-right: calc(8rem * var(--reverse));
+    margin-left: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-8 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8rem * var(--reverse));
+    margin-top: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(8.5rem * var(--reverse));
+    margin-left: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8.5rem * var(--reverse));
+    margin-top: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-9 > * + * {
+    --reverse: 0;
+    margin-right: calc(9rem * var(--reverse));
+    margin-left: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-9 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9rem * var(--reverse));
+    margin-top: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(9.5rem * var(--reverse));
+    margin-left: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9.5rem * var(--reverse));
+    margin-top: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-10 > * + * {
+    --reverse: 0;
+    margin-right: calc(10rem * var(--reverse));
+    margin-left: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-10 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10rem * var(--reverse));
+    margin-top: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(10.5rem * var(--reverse));
+    margin-left: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10.5rem * var(--reverse));
+    margin-top: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-11 > * + * {
+    --reverse: 0;
+    margin-right: calc(11rem * var(--reverse));
+    margin-left: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-11 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11rem * var(--reverse));
+    margin-top: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(11.5rem * var(--reverse));
+    margin-left: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11.5rem * var(--reverse));
+    margin-top: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-12 > * + * {
+    --reverse: 0;
+    margin-right: calc(12rem * var(--reverse));
+    margin-left: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-12 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12rem * var(--reverse));
+    margin-top: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(12.5rem * var(--reverse));
+    margin-left: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12.5rem * var(--reverse));
+    margin-top: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-13 > * + * {
+    --reverse: 0;
+    margin-right: calc(13rem * var(--reverse));
+    margin-left: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-13 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13rem * var(--reverse));
+    margin-top: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(13.5rem * var(--reverse));
+    margin-left: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13.5rem * var(--reverse));
+    margin-top: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-14 > * + * {
+    --reverse: 0;
+    margin-right: calc(14rem * var(--reverse));
+    margin-left: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-14 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14rem * var(--reverse));
+    margin-top: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(14.5rem * var(--reverse));
+    margin-left: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14.5rem * var(--reverse));
+    margin-top: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-15 > * + * {
+    --reverse: 0;
+    margin-right: calc(15rem * var(--reverse));
+    margin-left: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-15 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15rem * var(--reverse));
+    margin-top: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(15.5rem * var(--reverse));
+    margin-left: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15.5rem * var(--reverse));
+    margin-top: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-16 > * + * {
+    --reverse: 0;
+    margin-right: calc(16rem * var(--reverse));
+    margin-left: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-16 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16rem * var(--reverse));
+    margin-top: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(16.5rem * var(--reverse));
+    margin-left: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16.5rem * var(--reverse));
+    margin-top: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-17 > * + * {
+    --reverse: 0;
+    margin-right: calc(17rem * var(--reverse));
+    margin-left: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-17 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17rem * var(--reverse));
+    margin-top: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(17.5rem * var(--reverse));
+    margin-left: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17.5rem * var(--reverse));
+    margin-top: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-18 > * + * {
+    --reverse: 0;
+    margin-right: calc(18rem * var(--reverse));
+    margin-left: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-18 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18rem * var(--reverse));
+    margin-top: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(18.5rem * var(--reverse));
+    margin-left: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18.5rem * var(--reverse));
+    margin-top: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-19 > * + * {
+    --reverse: 0;
+    margin-right: calc(19rem * var(--reverse));
+    margin-left: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-19 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19rem * var(--reverse));
+    margin-top: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(19.5rem * var(--reverse));
+    margin-left: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19.5rem * var(--reverse));
+    margin-top: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-20 > * + * {
+    --reverse: 0;
+    margin-right: calc(20rem * var(--reverse));
+    margin-left: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .t\:col-space-20 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(20rem * var(--reverse));
+    margin-top: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .t\:row-space-initial > * + * {
+    --x-initial: 0 0 0 initial;
+    margin: var(--x-initial);
+  }
+  .t\:col-space-initial > * + * {
+    --y-initial: initial 0 0 0;
+    margin: var(--y-initial);
+  }
+  .t\:row-space-auto > * + * {
+    --x-auto: 0 0 0 auto;
+    margin: var(--x-auto);
+  }
+  .t\:col-space-auto > * + * {
+    --y-auto: auto 0 0 0;
+    margin: var(--y-auto);
+  }
   .t\:grid-cols-none {
     grid-template-columns: none;
   }
@@ -3043,6 +4321,432 @@
   }
   .l\:row-gap-20 {
     row-gap: 20rem;
+  }
+  .l\:row-space-0 > * + * {
+    --reverse: 0;
+    margin-right: calc(0rem * var(--reverse));
+    margin-left: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-0 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0rem * var(--reverse));
+    margin-top: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(0.5rem * var(--reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0.5rem * var(--reverse));
+    margin-top: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-1 > * + * {
+    --reverse: 0;
+    margin-right: calc(1rem * var(--reverse));
+    margin-left: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-1 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1rem * var(--reverse));
+    margin-top: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(1.5rem * var(--reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1.5rem * var(--reverse));
+    margin-top: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-2 > * + * {
+    --reverse: 0;
+    margin-right: calc(2rem * var(--reverse));
+    margin-left: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-2 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2rem * var(--reverse));
+    margin-top: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(2.5rem * var(--reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2.5rem * var(--reverse));
+    margin-top: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-3 > * + * {
+    --reverse: 0;
+    margin-right: calc(3rem * var(--reverse));
+    margin-left: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-3 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3rem * var(--reverse));
+    margin-top: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(3.5rem * var(--reverse));
+    margin-left: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3.5rem * var(--reverse));
+    margin-top: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-4 > * + * {
+    --reverse: 0;
+    margin-right: calc(4rem * var(--reverse));
+    margin-left: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-4 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4rem * var(--reverse));
+    margin-top: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(4.5rem * var(--reverse));
+    margin-left: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4.5rem * var(--reverse));
+    margin-top: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5rem * var(--reverse));
+    margin-left: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5rem * var(--reverse));
+    margin-top: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5.5rem * var(--reverse));
+    margin-left: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5.5rem * var(--reverse));
+    margin-top: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-6 > * + * {
+    --reverse: 0;
+    margin-right: calc(6rem * var(--reverse));
+    margin-left: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-6 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6rem * var(--reverse));
+    margin-top: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(6.5rem * var(--reverse));
+    margin-left: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6.5rem * var(--reverse));
+    margin-top: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-7 > * + * {
+    --reverse: 0;
+    margin-right: calc(7rem * var(--reverse));
+    margin-left: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-7 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7rem * var(--reverse));
+    margin-top: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(7.5rem * var(--reverse));
+    margin-left: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7.5rem * var(--reverse));
+    margin-top: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-8 > * + * {
+    --reverse: 0;
+    margin-right: calc(8rem * var(--reverse));
+    margin-left: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-8 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8rem * var(--reverse));
+    margin-top: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(8.5rem * var(--reverse));
+    margin-left: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8.5rem * var(--reverse));
+    margin-top: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-9 > * + * {
+    --reverse: 0;
+    margin-right: calc(9rem * var(--reverse));
+    margin-left: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-9 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9rem * var(--reverse));
+    margin-top: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(9.5rem * var(--reverse));
+    margin-left: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9.5rem * var(--reverse));
+    margin-top: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-10 > * + * {
+    --reverse: 0;
+    margin-right: calc(10rem * var(--reverse));
+    margin-left: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-10 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10rem * var(--reverse));
+    margin-top: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(10.5rem * var(--reverse));
+    margin-left: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10.5rem * var(--reverse));
+    margin-top: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-11 > * + * {
+    --reverse: 0;
+    margin-right: calc(11rem * var(--reverse));
+    margin-left: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-11 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11rem * var(--reverse));
+    margin-top: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(11.5rem * var(--reverse));
+    margin-left: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11.5rem * var(--reverse));
+    margin-top: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-12 > * + * {
+    --reverse: 0;
+    margin-right: calc(12rem * var(--reverse));
+    margin-left: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-12 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12rem * var(--reverse));
+    margin-top: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(12.5rem * var(--reverse));
+    margin-left: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12.5rem * var(--reverse));
+    margin-top: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-13 > * + * {
+    --reverse: 0;
+    margin-right: calc(13rem * var(--reverse));
+    margin-left: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-13 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13rem * var(--reverse));
+    margin-top: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(13.5rem * var(--reverse));
+    margin-left: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13.5rem * var(--reverse));
+    margin-top: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-14 > * + * {
+    --reverse: 0;
+    margin-right: calc(14rem * var(--reverse));
+    margin-left: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-14 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14rem * var(--reverse));
+    margin-top: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(14.5rem * var(--reverse));
+    margin-left: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14.5rem * var(--reverse));
+    margin-top: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-15 > * + * {
+    --reverse: 0;
+    margin-right: calc(15rem * var(--reverse));
+    margin-left: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-15 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15rem * var(--reverse));
+    margin-top: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(15.5rem * var(--reverse));
+    margin-left: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15.5rem * var(--reverse));
+    margin-top: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-16 > * + * {
+    --reverse: 0;
+    margin-right: calc(16rem * var(--reverse));
+    margin-left: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-16 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16rem * var(--reverse));
+    margin-top: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(16.5rem * var(--reverse));
+    margin-left: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16.5rem * var(--reverse));
+    margin-top: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-17 > * + * {
+    --reverse: 0;
+    margin-right: calc(17rem * var(--reverse));
+    margin-left: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-17 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17rem * var(--reverse));
+    margin-top: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(17.5rem * var(--reverse));
+    margin-left: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17.5rem * var(--reverse));
+    margin-top: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-18 > * + * {
+    --reverse: 0;
+    margin-right: calc(18rem * var(--reverse));
+    margin-left: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-18 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18rem * var(--reverse));
+    margin-top: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(18.5rem * var(--reverse));
+    margin-left: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18.5rem * var(--reverse));
+    margin-top: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-19 > * + * {
+    --reverse: 0;
+    margin-right: calc(19rem * var(--reverse));
+    margin-left: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-19 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19rem * var(--reverse));
+    margin-top: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(19.5rem * var(--reverse));
+    margin-left: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19.5rem * var(--reverse));
+    margin-top: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-20 > * + * {
+    --reverse: 0;
+    margin-right: calc(20rem * var(--reverse));
+    margin-left: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .l\:col-space-20 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(20rem * var(--reverse));
+    margin-top: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .l\:row-space-initial > * + * {
+    --x-initial: 0 0 0 initial;
+    margin: var(--x-initial);
+  }
+  .l\:col-space-initial > * + * {
+    --y-initial: initial 0 0 0;
+    margin: var(--y-initial);
+  }
+  .l\:row-space-auto > * + * {
+    --x-auto: 0 0 0 auto;
+    margin: var(--x-auto);
+  }
+  .l\:col-space-auto > * + * {
+    --y-auto: auto 0 0 0;
+    margin: var(--y-auto);
   }
   .l\:grid-cols-none {
     grid-template-columns: none;
@@ -3932,6 +5636,432 @@
   .d\:row-gap-20 {
     row-gap: 20rem;
   }
+  .d\:row-space-0 > * + * {
+    --reverse: 0;
+    margin-right: calc(0rem * var(--reverse));
+    margin-left: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-0 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0rem * var(--reverse));
+    margin-top: calc(0rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(0.5rem * var(--reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-0\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(0.5rem * var(--reverse));
+    margin-top: calc(0.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-1 > * + * {
+    --reverse: 0;
+    margin-right: calc(1rem * var(--reverse));
+    margin-left: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-1 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1rem * var(--reverse));
+    margin-top: calc(1rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(1.5rem * var(--reverse));
+    margin-left: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-1\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(1.5rem * var(--reverse));
+    margin-top: calc(1.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-2 > * + * {
+    --reverse: 0;
+    margin-right: calc(2rem * var(--reverse));
+    margin-left: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-2 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2rem * var(--reverse));
+    margin-top: calc(2rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(2.5rem * var(--reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-2\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(2.5rem * var(--reverse));
+    margin-top: calc(2.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-3 > * + * {
+    --reverse: 0;
+    margin-right: calc(3rem * var(--reverse));
+    margin-left: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-3 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3rem * var(--reverse));
+    margin-top: calc(3rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(3.5rem * var(--reverse));
+    margin-left: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-3\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(3.5rem * var(--reverse));
+    margin-top: calc(3.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-4 > * + * {
+    --reverse: 0;
+    margin-right: calc(4rem * var(--reverse));
+    margin-left: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-4 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4rem * var(--reverse));
+    margin-top: calc(4rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(4.5rem * var(--reverse));
+    margin-left: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-4\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(4.5rem * var(--reverse));
+    margin-top: calc(4.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5rem * var(--reverse));
+    margin-left: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5rem * var(--reverse));
+    margin-top: calc(5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(5.5rem * var(--reverse));
+    margin-left: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-5\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(5.5rem * var(--reverse));
+    margin-top: calc(5.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-6 > * + * {
+    --reverse: 0;
+    margin-right: calc(6rem * var(--reverse));
+    margin-left: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-6 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6rem * var(--reverse));
+    margin-top: calc(6rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(6.5rem * var(--reverse));
+    margin-left: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-6\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(6.5rem * var(--reverse));
+    margin-top: calc(6.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-7 > * + * {
+    --reverse: 0;
+    margin-right: calc(7rem * var(--reverse));
+    margin-left: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-7 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7rem * var(--reverse));
+    margin-top: calc(7rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(7.5rem * var(--reverse));
+    margin-left: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-7\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(7.5rem * var(--reverse));
+    margin-top: calc(7.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-8 > * + * {
+    --reverse: 0;
+    margin-right: calc(8rem * var(--reverse));
+    margin-left: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-8 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8rem * var(--reverse));
+    margin-top: calc(8rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(8.5rem * var(--reverse));
+    margin-left: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-8\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(8.5rem * var(--reverse));
+    margin-top: calc(8.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-9 > * + * {
+    --reverse: 0;
+    margin-right: calc(9rem * var(--reverse));
+    margin-left: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-9 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9rem * var(--reverse));
+    margin-top: calc(9rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(9.5rem * var(--reverse));
+    margin-left: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-9\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(9.5rem * var(--reverse));
+    margin-top: calc(9.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-10 > * + * {
+    --reverse: 0;
+    margin-right: calc(10rem * var(--reverse));
+    margin-left: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-10 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10rem * var(--reverse));
+    margin-top: calc(10rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(10.5rem * var(--reverse));
+    margin-left: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-10\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(10.5rem * var(--reverse));
+    margin-top: calc(10.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-11 > * + * {
+    --reverse: 0;
+    margin-right: calc(11rem * var(--reverse));
+    margin-left: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-11 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11rem * var(--reverse));
+    margin-top: calc(11rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(11.5rem * var(--reverse));
+    margin-left: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-11\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(11.5rem * var(--reverse));
+    margin-top: calc(11.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-12 > * + * {
+    --reverse: 0;
+    margin-right: calc(12rem * var(--reverse));
+    margin-left: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-12 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12rem * var(--reverse));
+    margin-top: calc(12rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(12.5rem * var(--reverse));
+    margin-left: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-12\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(12.5rem * var(--reverse));
+    margin-top: calc(12.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-13 > * + * {
+    --reverse: 0;
+    margin-right: calc(13rem * var(--reverse));
+    margin-left: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-13 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13rem * var(--reverse));
+    margin-top: calc(13rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(13.5rem * var(--reverse));
+    margin-left: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-13\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(13.5rem * var(--reverse));
+    margin-top: calc(13.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-14 > * + * {
+    --reverse: 0;
+    margin-right: calc(14rem * var(--reverse));
+    margin-left: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-14 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14rem * var(--reverse));
+    margin-top: calc(14rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(14.5rem * var(--reverse));
+    margin-left: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-14\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(14.5rem * var(--reverse));
+    margin-top: calc(14.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-15 > * + * {
+    --reverse: 0;
+    margin-right: calc(15rem * var(--reverse));
+    margin-left: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-15 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15rem * var(--reverse));
+    margin-top: calc(15rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(15.5rem * var(--reverse));
+    margin-left: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-15\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(15.5rem * var(--reverse));
+    margin-top: calc(15.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-16 > * + * {
+    --reverse: 0;
+    margin-right: calc(16rem * var(--reverse));
+    margin-left: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-16 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16rem * var(--reverse));
+    margin-top: calc(16rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(16.5rem * var(--reverse));
+    margin-left: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-16\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(16.5rem * var(--reverse));
+    margin-top: calc(16.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-17 > * + * {
+    --reverse: 0;
+    margin-right: calc(17rem * var(--reverse));
+    margin-left: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-17 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17rem * var(--reverse));
+    margin-top: calc(17rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(17.5rem * var(--reverse));
+    margin-left: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-17\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(17.5rem * var(--reverse));
+    margin-top: calc(17.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-18 > * + * {
+    --reverse: 0;
+    margin-right: calc(18rem * var(--reverse));
+    margin-left: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-18 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18rem * var(--reverse));
+    margin-top: calc(18rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(18.5rem * var(--reverse));
+    margin-left: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-18\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(18.5rem * var(--reverse));
+    margin-top: calc(18.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-19 > * + * {
+    --reverse: 0;
+    margin-right: calc(19rem * var(--reverse));
+    margin-left: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-19 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19rem * var(--reverse));
+    margin-top: calc(19rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-right: calc(19.5rem * var(--reverse));
+    margin-left: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-19\,5 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(19.5rem * var(--reverse));
+    margin-top: calc(19.5rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-20 > * + * {
+    --reverse: 0;
+    margin-right: calc(20rem * var(--reverse));
+    margin-left: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .d\:col-space-20 > * + * {
+    --reverse: 0;
+    margin-bottom: calc(20rem * var(--reverse));
+    margin-top: calc(20rem * calc(1 - var(--reverse)));
+  }
+  .d\:row-space-initial > * + * {
+    --x-initial: 0 0 0 initial;
+    margin: var(--x-initial);
+  }
+  .d\:col-space-initial > * + * {
+    --y-initial: initial 0 0 0;
+    margin: var(--y-initial);
+  }
+  .d\:row-space-auto > * + * {
+    --x-auto: 0 0 0 auto;
+    margin: var(--x-auto);
+  }
+  .d\:col-space-auto > * + * {
+    --y-auto: auto 0 0 0;
+    margin: var(--y-auto);
+  }
   .d\:grid-cols-none {
     grid-template-columns: none;
   }
@@ -4631,6 +6761,13 @@
   .row-end-12 {
     grid-row-end: 12;
   }
+  .space-reverse > * + * {
+    --reverse: 1;
+    --x-initial: 0 initial 0 0;
+    --y-initial: 0 0 initial 0;
+    --x-auto: 0 auto 0 0;
+    --y-auto: 0 0 auto 0;
+  }
 }
 
 @media screen and (min-width: 640px) {
@@ -4825,6 +6962,13 @@
   }
   .m\:row-end-12 {
     grid-row-end: 12;
+  }
+  .m\:space-reverse > * + * {
+    --reverse: 1;
+    --x-initial: 0 initial 0 0;
+    --y-initial: 0 0 initial 0;
+    --x-auto: 0 auto 0 0;
+    --y-auto: 0 0 auto 0;
   }
 }
 
@@ -5021,6 +7165,13 @@
   .t\:row-end-12 {
     grid-row-end: 12;
   }
+  .t\:space-reverse > * + * {
+    --reverse: 1;
+    --x-initial: 0 initial 0 0;
+    --y-initial: 0 0 initial 0;
+    --x-auto: 0 auto 0 0;
+    --y-auto: 0 0 auto 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -5216,6 +7367,13 @@
   .l\:row-end-12 {
     grid-row-end: 12;
   }
+  .l\:space-reverse > * + * {
+    --reverse: 1;
+    --x-initial: 0 initial 0 0;
+    --y-initial: 0 0 initial 0;
+    --x-auto: 0 auto 0 0;
+    --y-auto: 0 0 auto 0;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -5410,6 +7568,13 @@
   }
   .d\:row-end-12 {
     grid-row-end: 12;
+  }
+  .d\:space-reverse > * + * {
+    --reverse: 1;
+    --x-initial: 0 initial 0 0;
+    --y-initial: 0 0 initial 0;
+    --x-auto: 0 auto 0 0;
+    --y-auto: 0 0 auto 0;
   }
 }
 /*# sourceMappingURL=v-grid.css.map */
