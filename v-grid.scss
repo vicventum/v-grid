@@ -39,7 +39,7 @@ $responsiveSign: \:;
 
 @mixin flexGapCondicional($axis ,$i) {
   --reverse: 0; 
-  @if $axis == row {
+  @if $axis == col {
     margin-right: calc(#{($i / 2) * 1rem} * var(--reverse));
     margin-left: calc(#{($i / 2) * 1rem} * calc(1 - var(--reverse)));              
   } @else {
@@ -116,7 +116,7 @@ $size in $breakpoints {
       }
     }
 
-    // Flex Gap's ================================================
+    // Space between ================================================
     @for $i from 0 through 40 {
 
       @if round($i / 2)==$i / 2 {
@@ -142,11 +142,15 @@ $size in $breakpoints {
         .#{$sizeName}#{$responsiveSign}#{$axis}-space-#{$option} > * + * {
           // --auto-reverse: 0 0 0 #{$option};
           @if $axis == row {
-            --x-#{$option}: 0 0 0 #{$option};
-            margin: var(--x-#{$option})
+            --x-#{$option}: #{$option};
+            --x-reverse-#{$option}: 0;
+            margin-left: var(--x-#{$option});
+            margin-right: var(--x-reverse-#{$option});
           } @else {
-            --y-#{$option}: #{$option} 0 0 0;
-            margin: var(--y-#{$option})
+            --y-#{$option}: #{$option};
+            --y-reverse-#{$option}: 0;
+            margin-top: var(--y-#{$option});
+            margin-bottom: var(--y-reverse-#{$option});
           }
         }
       }
@@ -210,9 +214,14 @@ $size in $breakpoints {
     // justify-content: start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly; 
     // align-content:   start | flex-start | end | flex-end center | stretch | space-around | space-between | space-evenly;  
 
+    // place-item: start | center | end
+    // place-content: start | center | end
+    // place-self: start | center | end
+
     .#{$sizeName}#{$responsiveSign}block-center {
       margin-right: auto;
       margin-left: auto;
+
     }
 
     @each $align in (left, right, center) {
@@ -222,7 +231,7 @@ $size in $breakpoints {
     }
 
     @each $align in (j, a) {
-      @if $align==a {
+      @if $align == a {
 
         // Caso particular para align-items: baseline
         .#{$sizeName}#{$responsiveSign}#{$align}-items-baseline {
@@ -415,8 +424,10 @@ $size in $breakpoints {
     .#{$sizeName}#{$responsiveSign}space-reverse > * + * {
       --reverse: 1;
       @each $option in (initial, auto) {
-        --x-#{$option}: 0 #{$option} 0 0;
-        --y-#{$option}: 0 0 #{$option} 0;
+        --x-#{$option}: 0;
+        --y-#{$option}: 0;
+        --x-reverse-#{$option}: #{$option};
+        --y-reverse-#{$option}: #{$option};
       }
     }
   }
