@@ -218,21 +218,30 @@ $size in $breakpoints {
     // place-content: start | center | end
     // place-self: start | center | end
 
+    // block-align
     .#{$sizeName}#{$responsiveSign}block-center {
       margin-right: auto;
       margin-left: auto;
-
     }
-
+    // text-align
     @each $align in (left, right, center) {
       .#{$sizeName}#{$responsiveSign}text-#{$align} {
         text-align: $align;
       }
     }
 
+    // p-mode-align
+    @each $mode in (items, content, self) {
+      @each $align in (start, center, end) {
+        .#{$sizeName}#{$responsiveSign}p-#{$mode}-#{$align}{
+          place-#{$mode}: $align;
+        }   
+      } 
+    }
+
+    // j-mode-align / a-mode-align
     @each $align in (j, a) {
       @if $align == a {
-
         // Caso particular para align-items: baseline
         .#{$sizeName}#{$responsiveSign}#{$align}-items-baseline {
           align-items: baseline;
