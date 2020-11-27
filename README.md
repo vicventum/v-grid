@@ -1,5 +1,5 @@
 # **v-grid**
-### Sistema de grillas super ligero para crear layouts basado en Grid CSS y Flexbox, hecho en Sass.
+### Sistema de layouts basado en Grid CSS y Flexbox para la creación de la estructura del proyecto; hecho en Sass.
 ### **Autor:** Víctor Álvarez
 
 >Ejemplo de uso en index.html
@@ -35,7 +35,7 @@ Crea layout responsive con grid o flexbox
 * **responsive-grid**:<br> 
 ```scss
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax($min-size-responsive, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(min($min-size-responsive, 100%), 1fr));
 ```
 
 * **responsive-flex**:<br> 

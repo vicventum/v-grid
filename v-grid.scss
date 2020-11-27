@@ -274,7 +274,7 @@ $size in $breakpoints {
     // responsive-grid =======================================
     .#{$sizeName}#{$responsiveSign}responsive-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax($min-size-responsive, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min($min-size-responsive, 100%), 1fr));
     }
 
     // v-flex ------------------------------------------------------------
@@ -327,17 +327,27 @@ $size in $breakpoints {
       display: flex;
       flex-wrap: wrap;
 
-      &>* {
+      & > * {
         flex: 1 1 $min-size-responsive;
       }
     }
+    .#{$sizeName}#{$responsiveSign}responsive-flex-alt {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      & > * {
+        flex: 0 1 $min-size-responsive;
+      }
+    }
+
 
     // order =========================================================
     @for $i from 0 through 12 {
       @if $i==0 {
 
         @each $name,
-        $value in (first: -9999, last: 9999, none: 0) {
+          $value in (first: -9999, last: 9999, none: 0) {
           .#{$sizeName}#{$responsiveSign}order-#{$name} {
             order: $value
           }
