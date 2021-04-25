@@ -78,6 +78,10 @@ $size in $breakpoints {
       display: flex;
     }
 
+    .#{$sizeName}#{$responsiveSign}v-initial {
+      display: initial;
+    }
+
     // Gap's ================================================
     @for $i from 0 through 40 {
 
@@ -274,7 +278,8 @@ $size in $breakpoints {
     // responsive-grid =======================================
     .#{$sizeName}#{$responsiveSign}responsive-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min($min-size-responsive, 100%), 1fr));
+      // FIXME: EL 'unquote()' es un workaround debido al conflicto entre la función min() de CSS y la de Sass
+      grid-template-columns: repeat(auto-fit, minmax(unquote('min(#{$min-size-responsive}, 100%), 1fr')));
     }
 
     // v-flex ------------------------------------------------------------
