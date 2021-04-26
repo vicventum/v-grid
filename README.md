@@ -1,3 +1,4 @@
+<!-- <style>html {scroll-behavior: smooth;}</style> -->
 # **v-grid**
 
 Framework CSS para la creación de layouts responsivos con Grid y Flexbox. Inspirado en Tailwind CSS.
@@ -5,6 +6,21 @@ Framework CSS para la creación de layouts responsivos con Grid y Flexbox. Inspi
 ### **Autor:** Víctor Álvarez
 
 > Ejemplo de uso en index.html
+
+---
+## **Tabla de contenidos**
+||
+|- |
+| [Optimización](#optimización) |
+| [Responsive Design](#responsive-design) |
+| [Utilidades Responsive](#utilidades-responsive) |
+| [Display](#display) |
+| [Espaciado](#espaciado) |
+| [Propiedades Grid](#propiedades-grid) |
+| [Propiedades Flex](#propiedades-flex) |
+| [Alineamiento](#alineamiento) |
+| [Tamaño](#tamaño) |
+| [Configuraciones](#configuraciones) |
 
 ---
 
@@ -44,6 +60,7 @@ Por ejemplo, el siguiente `div` tendrá ancho completo en móviles, medirá la m
 ```
 
 ---
+
 ## **Utilidades Responsive**
 
 Clases para crear layouts intrínsecamente responsive con Grid o Flexbox (da diferentes resultados cada uno).
@@ -100,7 +117,6 @@ flex-wrap: wrap;
 ---
 
 ## **Espaciado**
-
 ### **Gap's**
 
 Siendo `n` un numero del 0 al 20 representando cada unidad `1rem`:
@@ -222,6 +238,8 @@ Si los elementos hijos están en orden inverso (por haber usado clases cómo `fl
 
 ---
 
+## **Propiedades Grid**
+
 ### **grid-template-columns** | **grid-template-rows**
 
 Siendo `n` un numero del 1 al 12 o `none`
@@ -239,7 +257,7 @@ Siendo `n` un numero del 1 al 12 o `none`
 
 ---
 
-### **grid-column** | **grid-row** (catidad en `span`)
+### **grid-column** | **grid-row** (cantidad en `span`)
 
 Siendo `n` un numero del 1 al 12
 
@@ -343,9 +361,8 @@ o full:
 
 ---
 
----
 
-## **v-flex**
+## **Propiedades Flex**
 
 ### **flex-direction**
 
@@ -446,7 +463,6 @@ O valores específicos:
   order: none;
   ```
 
----
 
 ---
 

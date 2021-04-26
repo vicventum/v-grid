@@ -13,6 +13,7 @@
 - [x] Documentar clases nuevas añadidas: col-space-x - row-space-x text-center block-center
 - [x] Añadir cómo funciona los breakpoints - responsives en la documentación
 - [x] Actualizar descripción
+- [ ] Agrega tabla de contenido
 - [ ] Refactorizar pagina de demo
 - [ ] Modularizar v-grid.scss
 
