@@ -794,28 +794,28 @@
     margin-left: calc(20rem * calc(1 - var(--reverse)));
   }
   .row-space-initial > * + * {
-    --x-initial: initial;
-    --x-reverse-initial: 0;
-    margin-left: var(--x-initial);
-    margin-right: var(--x-reverse-initial);
-  }
-  .col-space-initial > * + * {
     --y-initial: initial;
     --y-reverse-initial: 0;
     margin-top: var(--y-initial);
     margin-bottom: var(--y-reverse-initial);
   }
-  .row-space-auto > * + * {
-    --x-auto: auto;
-    --x-reverse-auto: 0;
-    margin-left: var(--x-auto);
-    margin-right: var(--x-reverse-auto);
+  .col-space-initial > * + * {
+    --x-initial: initial;
+    --x-reverse-initial: 0;
+    margin-left: var(--x-initial);
+    margin-right: var(--x-reverse-initial);
   }
-  .col-space-auto > * + * {
+  .row-space-auto > * + * {
     --y-auto: auto;
     --y-reverse-auto: 0;
     margin-top: var(--y-auto);
     margin-bottom: var(--y-reverse-auto);
+  }
+  .col-space-auto > * + * {
+    --x-auto: auto;
+    --x-reverse-auto: 0;
+    margin-left: var(--x-auto);
+    margin-right: var(--x-reverse-auto);
   }
   .grid-cols-none {
     grid-template-columns: none;
@@ -1358,7 +1358,7 @@
   }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 420px) {
   .m\:v-inline-grid {
     display: inline-grid;
   }
@@ -2154,28 +2154,28 @@
     margin-left: calc(20rem * calc(1 - var(--reverse)));
   }
   .m\:row-space-initial > * + * {
-    --x-initial: initial;
-    --x-reverse-initial: 0;
-    margin-left: var(--x-initial);
-    margin-right: var(--x-reverse-initial);
-  }
-  .m\:col-space-initial > * + * {
     --y-initial: initial;
     --y-reverse-initial: 0;
     margin-top: var(--y-initial);
     margin-bottom: var(--y-reverse-initial);
   }
-  .m\:row-space-auto > * + * {
-    --x-auto: auto;
-    --x-reverse-auto: 0;
-    margin-left: var(--x-auto);
-    margin-right: var(--x-reverse-auto);
+  .m\:col-space-initial > * + * {
+    --x-initial: initial;
+    --x-reverse-initial: 0;
+    margin-left: var(--x-initial);
+    margin-right: var(--x-reverse-initial);
   }
-  .m\:col-space-auto > * + * {
+  .m\:row-space-auto > * + * {
     --y-auto: auto;
     --y-reverse-auto: 0;
     margin-top: var(--y-auto);
     margin-bottom: var(--y-reverse-auto);
+  }
+  .m\:col-space-auto > * + * {
+    --x-auto: auto;
+    --x-reverse-auto: 0;
+    margin-left: var(--x-auto);
+    margin-right: var(--x-reverse-auto);
   }
   .m\:grid-cols-none {
     grid-template-columns: none;
@@ -3514,28 +3514,28 @@
     margin-left: calc(20rem * calc(1 - var(--reverse)));
   }
   .t\:row-space-initial > * + * {
-    --x-initial: initial;
-    --x-reverse-initial: 0;
-    margin-left: var(--x-initial);
-    margin-right: var(--x-reverse-initial);
-  }
-  .t\:col-space-initial > * + * {
     --y-initial: initial;
     --y-reverse-initial: 0;
     margin-top: var(--y-initial);
     margin-bottom: var(--y-reverse-initial);
   }
-  .t\:row-space-auto > * + * {
-    --x-auto: auto;
-    --x-reverse-auto: 0;
-    margin-left: var(--x-auto);
-    margin-right: var(--x-reverse-auto);
+  .t\:col-space-initial > * + * {
+    --x-initial: initial;
+    --x-reverse-initial: 0;
+    margin-left: var(--x-initial);
+    margin-right: var(--x-reverse-initial);
   }
-  .t\:col-space-auto > * + * {
+  .t\:row-space-auto > * + * {
     --y-auto: auto;
     --y-reverse-auto: 0;
     margin-top: var(--y-auto);
     margin-bottom: var(--y-reverse-auto);
+  }
+  .t\:col-space-auto > * + * {
+    --x-auto: auto;
+    --x-reverse-auto: 0;
+    margin-left: var(--x-auto);
+    margin-right: var(--x-reverse-auto);
   }
   .t\:grid-cols-none {
     grid-template-columns: none;
@@ -4874,28 +4874,28 @@
     margin-left: calc(20rem * calc(1 - var(--reverse)));
   }
   .l\:row-space-initial > * + * {
-    --x-initial: initial;
-    --x-reverse-initial: 0;
-    margin-left: var(--x-initial);
-    margin-right: var(--x-reverse-initial);
-  }
-  .l\:col-space-initial > * + * {
     --y-initial: initial;
     --y-reverse-initial: 0;
     margin-top: var(--y-initial);
     margin-bottom: var(--y-reverse-initial);
   }
-  .l\:row-space-auto > * + * {
-    --x-auto: auto;
-    --x-reverse-auto: 0;
-    margin-left: var(--x-auto);
-    margin-right: var(--x-reverse-auto);
+  .l\:col-space-initial > * + * {
+    --x-initial: initial;
+    --x-reverse-initial: 0;
+    margin-left: var(--x-initial);
+    margin-right: var(--x-reverse-initial);
   }
-  .l\:col-space-auto > * + * {
+  .l\:row-space-auto > * + * {
     --y-auto: auto;
     --y-reverse-auto: 0;
     margin-top: var(--y-auto);
     margin-bottom: var(--y-reverse-auto);
+  }
+  .l\:col-space-auto > * + * {
+    --x-auto: auto;
+    --x-reverse-auto: 0;
+    margin-left: var(--x-auto);
+    margin-right: var(--x-reverse-auto);
   }
   .l\:grid-cols-none {
     grid-template-columns: none;
@@ -6234,28 +6234,28 @@
     margin-left: calc(20rem * calc(1 - var(--reverse)));
   }
   .d\:row-space-initial > * + * {
-    --x-initial: initial;
-    --x-reverse-initial: 0;
-    margin-left: var(--x-initial);
-    margin-right: var(--x-reverse-initial);
-  }
-  .d\:col-space-initial > * + * {
     --y-initial: initial;
     --y-reverse-initial: 0;
     margin-top: var(--y-initial);
     margin-bottom: var(--y-reverse-initial);
   }
-  .d\:row-space-auto > * + * {
-    --x-auto: auto;
-    --x-reverse-auto: 0;
-    margin-left: var(--x-auto);
-    margin-right: var(--x-reverse-auto);
+  .d\:col-space-initial > * + * {
+    --x-initial: initial;
+    --x-reverse-initial: 0;
+    margin-left: var(--x-initial);
+    margin-right: var(--x-reverse-initial);
   }
-  .d\:col-space-auto > * + * {
+  .d\:row-space-auto > * + * {
     --y-auto: auto;
     --y-reverse-auto: 0;
     margin-top: var(--y-auto);
     margin-bottom: var(--y-reverse-auto);
+  }
+  .d\:col-space-auto > * + * {
+    --x-auto: auto;
+    --x-reverse-auto: 0;
+    margin-left: var(--x-auto);
+    margin-right: var(--x-reverse-auto);
   }
   .d\:grid-cols-none {
     grid-template-columns: none;
@@ -7004,7 +7004,7 @@
   }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 420px) {
   .m\:col-auto {
     grid-column: auto;
   }

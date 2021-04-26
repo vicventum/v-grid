@@ -1,6 +1,6 @@
 // Breakpoints
 $breakpoints: ('': 0, // Mantener en 0
-  m: 640px,
+  m: 420px,
   t: 768px,
   l: 1024px,
   d: 1280px) !default;
@@ -145,7 +145,7 @@ $size in $breakpoints {
       @each $axis in (row, col) {
         .#{$sizeName}#{$responsiveSign}#{$axis}-space-#{$option} > * + * {
           // --auto-reverse: 0 0 0 #{$option};
-          @if $axis == row {
+          @if $axis == col {
             --x-#{$option}: #{$option};
             --x-reverse-#{$option}: 0;
             margin-left: var(--x-#{$option});

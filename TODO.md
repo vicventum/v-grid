@@ -9,8 +9,8 @@
 - [X] Intercambiar nombres de col-spaces-x y -row-space-x
 - [X] Agregar place-items y place-content
 - [X] Nueva opción de v-flex-responsive
-- [ ] Agregar v-inline, v-block, v-inline-block, v-initial
-- [ ] Documentar clases nuevas añadidas: col-space-x - row-space-x text-center block-center
+- [-] Agregar v-inline, v-block, v-inline-block, v-initial
+- [x] Documentar clases nuevas añadidas: col-space-x - row-space-x text-center block-center
 - [ ] Añadir cómo funciona los breakpoints - responsives en la documentación
 - [ ] Actualizar descripción
 - [ ] Refactorizar pagina de demo
