@@ -7,7 +7,7 @@ $breakpoints: ('': 0, // Mantener en 0
 
 // Vars
 $max-cols: 12;
-$min-size-responsive: 250px;
+$min-responsive-size: 250px;
 $responsiveSign: \:;
 
 // Functions
@@ -279,7 +279,7 @@ $size in $breakpoints {
     .#{$sizeName}#{$responsiveSign}responsive-grid {
       display: grid;
       // FIXME: EL 'unquote()' es un workaround debido al conflicto entre la función min() de CSS y la de Sass
-      grid-template-columns: repeat(auto-fit, minmax(unquote('min(#{$min-size-responsive}, 100%), 1fr')));
+      grid-template-columns: repeat(auto-fit, minmax(unquote('min(#{$min-responsive-size}, 100%), 1fr')));
     }
 
     // v-flex ------------------------------------------------------------
@@ -333,7 +333,7 @@ $size in $breakpoints {
       flex-wrap: wrap;
 
       & > * {
-        flex: 1 1 $min-size-responsive;
+        flex: 1 1 $min-responsive-size;
       }
     }
     .#{$sizeName}#{$responsiveSign}responsive-flex-alt {
@@ -342,7 +342,7 @@ $size in $breakpoints {
       justify-content: center;
 
       & > * {
-        flex: 0 1 $min-size-responsive;
+        flex: 0 1 $min-responsive-size;
       }
     }
 

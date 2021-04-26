@@ -48,7 +48,7 @@ Por ejemplo, el siguiente `div` tendrá ancho completo en móviles, medirá la m
 
 Clases para crear layouts intrínsecamente responsive con Grid o Flexbox (da diferentes resultados cada uno).
 
-> `$min-size-responsive` es una variable cuyo valor indica el tamaño mínimo que tendrán los elementos afectados por alguna de las clases **reponsives**
+> `$min-responsive-size` es una variable cuyo valor indica el tamaño mínimo que tendrán los elementos afectados por alguna de las clases **reponsives**
 
 - **responsive-grid**:<br>
 
@@ -56,7 +56,7 @@ Clases para crear layouts intrínsecamente responsive con Grid o Flexbox (da dif
 display: grid;
 grid-template-columns: repeat(
   auto-fit,
-  minmax(min($min-size-responsive, 100%), 1fr)
+  minmax(min($min-responsive-size, 100%), 1fr)
 );
 ```
 
@@ -66,7 +66,7 @@ grid-template-columns: repeat(
 display: flex;
 flex-wrap: wrap;
 & > * {
-  flex: 1 1 $min-size-responsive;
+  flex: 1 1 $min-responsive-size;
 }
 ```
 
@@ -574,5 +574,5 @@ $max-cols: 12;
 ```
 
 ```scss
-$min-size-responsive: 250px;
+$min-responsive-size: 250px;
 ```
