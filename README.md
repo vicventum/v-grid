@@ -1,6 +1,6 @@
 # **v-grid**
 
-### Sistema de layouts basado en Grid CSS y Flexbox para la creación de la estructura del proyecto; hecho en Sass.
+Framework CSS para la creación de layouts responsivos con Grid y Flexbox. Inspirado en Tailwind CSS.
 
 ### **Autor:** Víctor Álvarez
 
@@ -8,38 +8,45 @@
 
 ---
 
-## **Clases**
+## **Optimización**
 
-## **Display**
+Debido a que la mayoría de las propiedades para crear layouts en CSS serán aplicadas como una sola clase para muchos elementos HTML, se ahorrarán muchas líneas de código CSS. 
 
-- **v-grid**:<br>
-  ```css
-  display: grid;
-  ```
-- **v-inline-grid**:<br>
+Aún así, para una experiencia de desarrollo ágil, v-grid genera cientos de clases para la construcción de layouts, en donde al finalizar un proyecto notará que la mayoría no serán usadas. 
 
-  ```css
-  display: inline-grid;
-  ```
+Por ello se recomienda usar v-grid junto a otra librería llamada [PurgeCSS](https://purgecss.com/), la cual eliminará todas las clases no usadas en la versión de producción del proyecto.
 
-- **v-flex**:<br>
-  ```css
-  display: flex;
-  ```
-- **v-inline-flex**:<br>
-  ```css
-  display: inline-flex;
-  ```
-- **v-inline-initial**:<br>
-  ```css
-  display: inline-initial;
-  ```
+> **Nota:** Es por ello que hay que tener en cuenta que los elementos HTML generados dinámicamente es mejor que no se le agreguen clases de v-grid
+
+Dando como resultado que la versión de producción de v-grid no pese más de **4KB** en la mayoría de los proyectos.
 
 ---
 
-## **Responsive**
+## **Responsive Design**
 
-Crea layout responsive con grid o flexbox
+Usando la metodología mobile first, cada clase en v-grid se puede aplicar condicionalmente en diferentes puntos de interrupción, lo que hace fácil cambiar el layout para distintos tamaños de pantallas sin salir del HTML.
+
+Hay 4 puntos de interrupción
+
+| Prefijo de punto <br>de interrupción | Ancho mínimo | 
+|-|-|
+|m| 420px|
+|t| 768px|
+|l| 1024px|
+|d| 1280px|
+
+Para que una clase solo aplique sus estilos hasta cierto punto de interrupción solo se agrega el prefijo antes de la clase seguido del carácter "`:`". 
+
+Por ejemplo, el siguiente `div` tendrá ancho completo en móviles, medirá la mitad en tablets, y una tercera parte a partir de laptops.
+
+```html
+<div class="w-full t:w-1/2 l:w-1/3"></div>
+```
+
+---
+## **Utilidades Responsive**
+
+Clases para crear layouts intrínsecamente responsive con Grid o Flexbox (da diferentes resultados cada uno).
 
 > `$min-size-responsive` es una variable cuyo valor indica el tamaño mínimo que tendrán los elementos afectados por alguna de las clases **reponsives**
 
@@ -62,6 +69,33 @@ flex-wrap: wrap;
   flex: 1 1 $min-size-responsive;
 }
 ```
+
+---
+
+## **Display**
+
+- **v-grid**:<br>
+  ```css
+  display: grid;
+  ```
+- **v-inline-grid**:<br>
+
+  ```css
+  display: inline-grid;
+  ```
+
+- **v-flex**:<br>
+  ```css
+  display: flex;
+  ```
+- **v-inline-flex**:<br>
+  ```css
+  display: inline-flex;
+  ```
+- **v-initial**:<br>
+  ```css
+  display: inline-initial;
+  ```
 
 ---
 
@@ -91,6 +125,8 @@ También se puede usar mediadas intermedias para valores `n`,5:
 ### **Espacio entre elementos**
 
 Controla el espacio entre los hijos del elemento al que se le aplique la clase.
+
+> Si bien estas clases se pueden usar para cualquier tipo de elementos, un bueno uso es para dar espaciados a hijos de elementos `flex`. Actualmente también se puede usar la propiedad `gap` para dar espaciado en `flex`, pero aún no es totalmente soportada por todos los navegador. Por lo que esta puede ser una buena solución en estos casos.
 
 Funciona de manera horizontal
 
@@ -510,10 +546,12 @@ Usados idóneamente para los flex-items
 
 | **width**                          | **height**                          |
 | ---------------------------------- | ----------------------------------- |
-| **.w-auto**:<br> `width: auto;`    | **h-0**: <br> `height: 0`           |
-| **.w-full**:<br> `width: 100%;`    | **.h-auto**:<br> `height: auto;`    |
-| **.w-screen**:<br> `width: 100vw;` | **.h-full**:<br> `height: 100%;`    |
-|                                    | **.h-screen**:<br> `height: 100vw;` |
+| **.w-0**:<br> `width: 0;`    | **h-0**: <br> `height: 0`           |
+| **.w-auto**:<br> `width: auto;`    | **.h-auto**:<br> `height: auto;`    |
+| **.w-full**:<br> `width: 100%;` | **.h-full**:<br> `height: 100%;`    |
+| **.w-screen**:<br> `width: 100vw;` | **.h-screen**:<br> `height: 100vw;` |
+
+---
 
 ## **Configuraciones**
 
