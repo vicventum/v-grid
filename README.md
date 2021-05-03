@@ -87,6 +87,18 @@ flex-wrap: wrap;
 }
 ```
 
+- **responsive-flex**:<br>
+
+```scss
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+& > * {
+  flex: 0 1 $min-responsive-size;
+}
+```
+
 ---
 
 ## **Display**

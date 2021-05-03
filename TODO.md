@@ -13,8 +13,11 @@
 - [x] Documentar clases nuevas añadidas: col-space-x - row-space-x text-center block-center
 - [x] Añadir cómo funciona los breakpoints - responsives en la documentación
 - [x] Actualizar descripción
-- [ ] Agrega tabla de contenido
-- [ ] Refactorizar pagina de demo
+- [x] Agrega tabla de contenido
+- [x] Refactorizar pagina de demo
 - [ ] Modularizar v-grid.scss
+
+- [ ] Agregar clase utilitaria para dar espaciado entre elementos de responsive-flex con márgenes
+- [ ] Cambiar variables de Sass por variables CSS
 
 - [ ] Tener en cuenta que los elementos generados dinámicamente es mejor que no se le agreguen clases de v-grid

@@ -7,29 +7,244 @@ body {
   color: white;
 }
 
-h1, h2 {
-  margin: 0 0 -20px 0;
-  padding: 0;
+* {
+  border-radius: 10px;
 }
 
-div {
-  background-color: salmon;
-  background-color: #5794e4;
-  background-color: #5540a1;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  border-radius: 10px;
+h1, h2, h3, h4 {
+  margin-left: 1rem;
+}
+
+h2, footer {
+  border: 1px solid slateblue;
+  box-shadow: 10px 10px 0px 0px slateblue;
+}
+
+h2 {
+  display: inline-block;
+  margin: 2rem 0 0 0;
+  padding: .5rem;
+}
+
+h3 {
+  padding-top: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  color: #8977ff;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 section {
   margin: 3rem 1rem;
 }
 
-.m {
-  margin-top: 20px;
-  margin-bottom: 20px;
+section section {
+  margin: 0;
+}
+
+div {
+  background-color: #5540a1;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-subtitle {
+  display: block;
+  padding: 1rem;
+  font-weight: normal;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.u-subtitle span {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .u-subtitle {
+    line-height: 1.4;
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+#v-flex div:nth-child(1) {
+  background-color: mediumturquoise;
+}
+
+#v-flex div:nth-child(2) {
+  background-color: slateblue;
+}
+
+#v-grid div, #v-flex div {
+  font-size: 3rem;
+}
+
+#v-grid div:nth-child(1), #v-flex div:nth-child(1) {
+  background-color: dodgerblue;
+}
+
+#v-grid div:nth-child(2), #v-flex div:nth-child(2) {
+  background-color: mediumturquoise;
+}
+
+#v-grid div:nth-child(3), #v-flex div:nth-child(3) {
+  background-color: mediumorchid;
+}
+
+#v-grid div:nth-child(4), #v-flex div:nth-child(4) {
+  background-color: salmon;
+}
+
+.responsive-grid div, .responsive-flex div, .responsive-flex-alt div {
+  padding: 3rem;
+}
+
+article {
+  padding: 1rem;
+  border: 1px solid slateblue;
+}
+
+article span, article p, article article {
+  padding: 1rem;
+  background-color: slateblue;
+  font-weight: bold;
+}
+
+article span {
+  min-width: 7rem;
+  min-height: 1rem;
+}
+
+@media (max-width: 768px) {
+  .block-center span {
+    padding: 0;
+  }
+}
+
+#size, #gap {
+  padding: 1rem;
+  border: 1px solid slateblue;
+}
+
+#size div, #gap div {
+  padding: .5rem 0;
+  font-size: .8rem;
+}
+
+@media (min-width: 1024px) {
+  #size div, #gap div {
+    font-size: 1.5rem;
+  }
+}
+
+#size div:nth-child(even), #gap div:nth-child(even) {
+  background-color: dodgerblue;
+}
+
+#size section.row-space-1, #gap section.row-space-1 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #size section.row-space-1, #gap section.row-space-1 {
+    display: block;
+  }
+}
+
+.j-content-evenly span, .j-content-around span, .j-content-between span {
+  min-width: 1.7rem;
+}
+
+.j-content-evenly span:last-child, .j-content-around span:last-child, .j-content-between span:last-child {
+  display: none;
+}
+
+@media (min-width: 420px) {
+  .j-content-evenly span, .j-content-around span, .j-content-between span {
+    min-width: 3rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .j-content-evenly span, .j-content-around span, .j-content-between span {
+    min-width: 7rem;
+  }
+  .j-content-evenly span:last-child, .j-content-around span:last-child, .j-content-between span:last-child {
+    display: initial;
+  }
+}
+
+.a-items-baseline span {
+  min-width: 0;
+  padding: 1rem .5rem;
+}
+
+.a-items-baseline span:last-child {
+  display: none;
+}
+
+.a-items-baseline span:first-child {
+  padding: 2rem .5rem;
+}
+
+@media (min-width: 420px) {
+  .a-items-baseline span {
+    padding: 1rem;
+  }
+  .a-items-baseline span:first-child {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .a-items-baseline span:last-child {
+    display: block;
+    padding: 4rem 1rem;
+  }
+}
+
+[class*="a-items"], [class*="a-content"], section.a-self article {
+  height: 10rem;
+}
+
+footer {
+  margin: 0;
+  padding: .5rem 1rem;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test V-Grid</title>
-    <link rel="stylesheet" href="css/v-grid.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-</head>
-<body>
-    <h1 class="v-flex j-content-center">Examples</h1>
+    <link rel="stylesheet" href="css/v-grid.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1 class="text-center">v-grid CSS</h1>
 
-    - Displays
-        - grid
-        - flexbox
-    - Tamaño responsives
-    - Utilidades responsives
-    - Espaciado
-        - gaps
-        - space
-    - Alineamiento
-    
-    <section><h2>v-flex:</h2></section>
-    <section class="row-space-1 m:row-space-initial m:v-flex m:flex-row m:j-content-between">
+    <h2 class="u-subtitle t:text-center t:block-center t:w-2/3">Framework CSS para la creación de layouts responsivos con Grid y Flexbox. Inspirado en Tailwind CSS. <span>Encuentralo en <a href="https://github.com/vicventum/v-grid">v-grid</a>.</span></h2>
+    <!-- <p>Respositorio: <a href="#">pito</a></p> -->
+  
+    <!-- v-flex -->
+    <h2>v-flex:</h2>
+    <section>
+      <article
+        id="v-flex"
+        class="row-space-1 m:row-space-initial m:v-flex m:flex-row m:j-content-between"
+      >
         <div class="m:w-1/6">1</div>
-
         <div class="m:w-2/6">2</div>
+      </article>
     </section>
 
-    <!-- section class="v-grid gap-2 m:gap-0 m:grid-cols-2 j-items-between">
+    <!-- v-grid -->
+    <h2>v-grid:</h2>
+    <section>
+      <article id="v-grid" class="v-grid gap-1
+      m:grid-cols-2
+      t:grid-cols-4 t:grid-rows-3">
+        <div class="t:row-span-3
+        l:row-span-2 l:col-span-2">1</div>
+        <div class="t:row-span-2 t:col-span-2
+          l:col-start-1 l:row-start-3 l:col-span-1 l:row-span-1">2</div>
+        <div class="t:col-start-2 t:col-span-3 t:row-span-1
+          l:col-start-3 l:col-span-2 l:row-span-2">3</div>
+        <div class="t:col-start-4 t:row-span-2 t:row-start-1
+        l:col-start-2 l:col-span-3 l:row-span-1 l:row-start-3">4</div>
+      </article>
+    </section>
+
+    <!-- Tamaños -->
+    <h2>Tamaños</h2>
+    <section id="size" class="row-space-1">
+      <div class="t:w-1/12"><span>w-</span>1/12</div>
+      <div class="t:w-2/12"><span>w-</span>2/12</div>
+      <div class="t:w-3/12"><span>w-</span>3/12</div>
+      <div class="t:w-4/12"><span>w-</span>4/12</div>
+      <div class="t:w-5/12"><span>w-</span>5/12</div>
+      <div class="t:w-6/12"><span>w-</span>6/12</div>
+      <div class="t:w-7/12"><span>w-</span>7/12</div>
+      <div class="t:w-8/12"><span>w-</span>8/12</div>
+      <div class="t:w-9/12"><span>w-</span>9/12</div>
+      <div class="t:w-10/12"><span>w-</span>10/12</div>
+      <div class="t:w-11/12"><span>w-</span>11/12</div>
+      <div class="t:w-12/12"><span>w-</span>12/12</div>
+    </section>
+
+    <!-- Utilidades Responsive -->
+    <h2>Utilidades Responsive</h2>
+    <!-- <section class="v-grid gap-2 m:gap-0 m:grid-cols-2 j-items-between">
         <div class="m:w-1/3">1</div>
 
         <div class="m:w-4/6 m:j-self-end">2</div>
@@ -39,55 +72,390 @@
 
         <div>2</div>
     </section> -->
-<!-- 
-    <section class="v-flex  col-space-2 t:flex-row-reverse t:space-reverse 
-        d:col-space-auto">
-        <div class="w-1/6 m"></div>
-        <div class="w-1/6 m"></div>
-        <div class="w-1/6 m"></div>
-    </section>
-    <section class="v-flex  col-space-2 ">
-        <div class="w-1/6 m"></div>
-        <div class="w-1/6 m"></div>
-        <div class="w-1/6 m"></div>
+
+    <!-- responsive-grid -->
+    <h3>responsive-grid</h3>
+    <section>
+      <article class="responsive-grid gap-1">
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+      </article>
+      <!-- responsive-flex -->
+      <h3>responsive-grid</h3>
+      <article class="responsive-flex gap-1">
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+      </article>
+      <!-- responsive-flex -->
+      <h3>responsive-flex-alt</h3>
+      <article class="responsive-flex-alt gap-1">
+        <div class=""></div>
+        <div class=""></div>
+        <div class=""></div>
+      </article>
     </section>
 
-    <section class=" w-1/3 row-space-2" style="background-color: #222;">
-        <div class="">0</div>
-        <div class="">0</div>
-        <div class="">0</div>
-    </section>
-    <section class="v-flex  w-1/2 col-space-1" style="gap: 32px; background-color: #222;">
-        <div class="">0</div>
-        <div class="">0</div>
-        <div class="">0</div>
-        <div class="">0</div>
-        <div class="">0</div>
-        <div class="">0</div>
-    </section> -->
+    
+    <section>
+      <!-- Alineamiento -->
+      <h2>Alineamiento</h2>
+      <!-- text-align -->
+      <h3>text-align</h3>
+      <article class="">
+        <p class=" text-left">text-left</p>
+        <p class=" text-center">text-center</p>
+        <p class=" text-right">text-right</p>
+      </article>
+      <!-- block-center -->
+      <h3>block-center</h3>
+      <article class="">
+        <article class=" block-center text-center w-2/5 t:w-1/4">
+          <span class="">block-center</span>
+        </article>
+      </article>
+      <!-- Propiedades Grid / Flex -->
+      <h3>Alineamiento de Flexbox / Grid</h3>
+      <section id="grid-flex-properties" class="row-space-1">
+        <section class="responsive-grid gap-1">
+          <section>
+            <h4>j-content-flex-start</h4>
+            <article class="v-flex j-content-flex-start ">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>j-content-center</h4>
+            <article class="v-flex j-content-center ">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>j-content-flex-end</h4>
+            <article class="v-flex j-content-flex-end ">
+              <span class=""></span>
+            </article>
+          </section>
+        </section>
+        <h4>j-content-evenly</h4>
+        <article class="v-flex  j-content-evenly">
+          <span class=""></span>
+          <span class=""></span>
+          <span class=""></span>
+        </article>
+        <h4>j-content-around</h4>
+        <article class="v-flex  j-content-around">
+          <span class=""></span>
+          <span class=""></span>
+          <span class=""></span>
+        </article>
+        <h4>j-content-between</h4>
+        <article class="v-flex  j-content-between">
+          <span class=""></span>
+          <span class=""></span>
+          <span class=""></span>
+        </article>
 
-    <!-- responsive-flex -->
-    <section class="responsive-flex col-space-1 row-space-1-">
-        <div class="">0</div>
-        <div class="">0</div>
-        <div class="">0</div>
-    </section>
-    <section class="responsive-flex-alt gap-1">
-        <div class="">0</div>
-        <div class="">0</div>
-        <div class="">0</div>
+        <section class="responsive-grid gap-1">
+          <section>
+            <h4>a-items-flex-start</h4>
+            <article class="v-flex a-items-flex-start ">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>a-items-center</h4>
+            <article class="v-flex a-items-center ">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>a-items-flex-end</h4>
+            <article class="v-flex a-items-flex-end ">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>a-items-stretch</h4>
+            <article class="v-flex a-items-stretch ">
+              <span class=""></span>
+            </article>
+          </section>
+        </section>
+
+
+        <h4>a-items-baseline</h4>
+        <article id="items-baseline" class="v-flex flex-wrap- a-items-baseline col-space-1">
+          <span class=" w-1/3">baseline</span>
+          <span class=" w-1/3">baseline</span>
+          <span class=" w-1/3">baseline</span>
+        </article>
+        
+        <section class="responsive-grid gap-1">
+          <article class="v-grid ">
+              <span class=" j-self-start">j-self-start</span>
+          </article>
+          <article class="v-grid ">
+            <span class=" j-self-center">j-self-center</span>
+          </article>
+          <article class="v-grid ">
+            <span class=" j-self-end">j-self-end</span>
+          </article>
+        </section>
+        <article class="v-grid  j-self-stretch">
+          <span class="j-self-stretch ">j-self-stretch</span>
+        </article>
+        <section class="responsive-grid gap-1 a-self">
+          <article class=" v-grid">
+            <span class=" a-self-center">a-self-center</span>
+          </article>
+          <article class=" v-grid">
+            <span class=" a-self-start">a-self-start</span>
+          </article>
+          <article class="  v-grid">
+            <span class=" a-self-end">a-self-end</span>
+          </article>
+          <article class="  v-grid">
+            <span class=" a-self-stretch">a-self-stretch</span>
+          </article>
+        </section>
+
+        <h3>Propiedades específicas de Grid</h3>
+        <section class="responsive-grid gap-1">
+          <section>
+            <h4>j-items-start</h4>
+            <article class="v-grid  j-items-start">
+              <span class=""></span>
+          </section>
+          </article>
+          <section>
+            <h4>j-items-center</h4>
+            <article class="v-grid  j-items-center">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>j-items-end</h4>
+            <article class="v-grid  j-items-end">
+              <span class=""></span>
+            </article>
+          </section>
+        </section>
+        <section class="responsive-grid gap-1">
+          <section>
+            <h4>a-content-start</h4>
+            <article class="v-grid  a-content-start">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>a-content-center</h4>
+            <article class="v-grid  a-content-center">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>a-content-end</h4>
+            <article class="v-grid  a-content-end">
+              <span class=""></span>
+            </article>
+          </section>
+          <section>
+            <h4>a-content-sa-content-stretch</h4>
+            <article class="v-grid  a-content-stretch">
+              <span class=""></span>
+            </article>
+          </section>
+        </section>
+      </section>
     </section>
 
-    <section><h2>v-grid:</h2></section>
-    <section class="v-grid m:grid-cols-4 m:grid-rows-3 gap-1 ">
-        <div class="m:row-span-3 l:row-span-2 l:col-span-2">1</div>
-        <div class="m:row-span-2 m:col-span-2 l:col-start-1 l:row-start-3 l:col-span-1 l:row-span-1">2</div>
-        <div class="
-         m:col-start-2 m:col-span-3 m:row-span-1
-         l:col-start-3 l:col-span-2 l:row-span-2"
-         >3</div>
-        <div class="m:col-start-4 m:row-span-2 m:row-start-1 l:col-start-2 l:col-span-3 l:row-span-1 l:row-start-3">4</div>
-    </section >
+    <!-- Espaciado -->
+    <h2>Espaciado</h2>
 
-</body>
+    <!-- gap -->
+    <h3>gap</h3>
+    <section id="gap" class="v-flex- row-space-1">
+      <section class="v-grid gap-1 grid-cols-2">
+        <div>gap-1</div>
+        <div>gap-1</div>
+      </section>
+      <section class="v-grid gap-2 grid-cols-2">
+        <div>gap-2</div>
+        <div>gap-2</div>
+      </section>
+      <section class="v-grid gap-3 grid-cols-2">
+        <div>gap-3</div>
+        <div>gap-3</div>
+      </section>
+      <section class="v-grid gap-4 grid-cols-2">
+        <div>gap-4</div>
+        <div>gap-4</div>
+      </section>
+
+      <section class="row-space-1">
+        
+        <section class="v-grid gap-5 grid-cols-2">
+          <div>gap-5</div>
+          <div>gap-5</div>
+        </section>
+        <section class="v-grid gap-6 grid-cols-2">
+          <div>gap-6</div>
+          <div>gap-6</div>
+        </section>
+        <section class="v-grid gap-7 grid-cols-2">
+          <div>gap-7</div>
+          <div>gap-7</div>
+        </section>
+        <section class="v-grid gap-8 grid-cols-2">
+          <div>gap-8</div>
+          <div>gap-8</div>
+        </section>
+        <section class="v-grid gap-9 grid-cols-2">
+          <div>gap-9</div>
+          <div>gap-9</div>
+        </section>
+        <section class="v-grid gap-10 grid-cols-2">
+          <div>gap-10</div>
+          <div>gap-10</div>
+        </section>
+        <section class="v-grid gap-11 grid-cols-2">
+          <div>gap-11</div>
+          <div>gap-11</div>
+        </section>
+        <section class="v-grid gap-12 grid-cols-2">
+          <div>gap-12</div>
+          <div>gap-12</div>
+        </section>
+        <section class="v-grid gap-13 grid-cols-2">
+          <div>gap-13</div>
+          <div>gap-13</div>
+        </section>
+        <section class="v-grid gap-14 grid-cols-2">
+          <div>gap-14</div>
+          <div>gap-14</div>
+        </section>
+        <section class="v-grid gap-15 grid-cols-2">
+          <div>gap-15</div>
+          <div>gap-15</div>
+        </section>
+        <section class="v-grid gap-16 grid-cols-2">
+          <div>gap-16</div>
+          <div>gap-16</div>
+        </section>
+        <section class="v-grid gap-17 grid-cols-2">
+          <div>gap-17</div>
+          <div>gap-17</div>
+        </section>
+        <section class="v-grid gap-18 grid-cols-2">
+          <div>gap-18</div>
+          <div>gap-18</div>
+        </section>
+        <section class="v-grid gap-19 grid-cols-2">
+          <div>gap-19</div>
+          <div>gap-19</div>
+        </section>
+        <section class="v-grid gap-20 grid-cols-2">
+          <div>gap-20</div>
+          <div>gap-20</div>
+        </section>
+      </section>
+    </section>
+
+    <!-- row-space / col-space -->
+    <h3>row-space / col-space</h3>
+    <section id="gap" class="v-flex- row-space-1">
+      <section class="v-flex col-space-1">
+        <div class="w-full">col-space-1</div>
+        <div class="w-full">col-space-1</div>
+      </section>
+      <section class="v-flex col-space-2">
+        <div class="w-full">col-space-2</div>
+        <div class="w-full">col-space-2</div>
+      </section>
+      <section class="v-flex col-space-3">
+        <div class="w-full">col-space-3</div>
+        <div class="w-full">col-space-3</div>
+      </section>
+      <section class="v-flex col-space-4">
+        <div class="w-full">col-space-4</div>
+        <div class="w-full">col-space-4</div>
+      </section>
+
+      <section class="row-space-1">
+        
+        <section class="v-flex col-space-5">
+          <div class="w-full">col-space-5</div>
+          <div class="w-full">col-space-5</div>
+        </section>
+        <section class="v-flex col-space-6">
+          <div class="w-full">col-space-6</div>
+          <div class="w-full">col-space-6</div>
+        </section>
+        <section class="v-flex col-space-7">
+          <div class="w-full">col-space-7</div>
+          <div class="w-full">col-space-7</div>
+        </section>
+        <section class="v-flex col-space-8">
+          <div class="w-full">col-space-8</div>
+          <div class="w-full">col-space-8</div>
+        </section>
+        <section class="v-flex col-space-9">
+          <div class="w-full">col-space-9</div>
+          <div class="w-full">col-space-9</div>
+        </section>
+        <section class="v-flex col-space-10">
+          <div class="w-full">col-space-10</div>
+          <div class="w-full">col-space-10</div>
+        </section>
+        <section class="v-flex col-space-11">
+          <div class="w-full">col-space-11</div>
+          <div class="w-full">col-space-11</div>
+        </section>
+        <section class="v-flex col-space-12">
+          <div class="w-full">col-space-12</div>
+          <div class="w-full">col-space-12</div>
+        </section>
+        <section class="v-flex col-space-13">
+          <div class="w-full">col-space-13</div>
+          <div class="w-full">col-space-13</div>
+        </section>
+        <section class="v-flex col-space-14">
+          <div class="w-full">col-space-14</div>
+          <div class="w-full">col-space-14</div>
+        </section>
+        <section class="v-flex col-space-15">
+          <div class="w-full">col-space-15</div>
+          <div class="w-full">col-space-15</div>
+        </section>
+        <section class="v-flex col-space-16">
+          <div class="w-full">col-space-16</div>
+          <div class="w-full">col-space-16</div>
+        </section>
+        <section class="v-flex col-space-17">
+          <div class="w-full">col-space-17</div>
+          <div class="w-full">col-space-17</div>
+        </section>
+        <section class="v-flex col-space-18">
+          <div class="w-full">col-space-18</div>
+          <div class="w-full">col-space-18</div>
+        </section>
+        <section class="v-flex col-space-19">
+          <div class="w-full">col-space-19</div>
+          <div class="w-full">col-space-19</div>
+        </section>
+        <section class="v-flex col-space-20">
+          <div class="w-full">col-space-20</div>
+          <div class="w-full">col-space-20</div>
+        </section>
+      </section>
+    </section>
+
+
+    <footer class="text-center">
+      <p>Creado por <a href="https://vicventum.web.app" target="_blank">Victor Alvarez</a> [<a href="https://github.com/vicventum/" target="_blank"> vicventum </a>]</p>
+    </footer>
+
+  </body>
 </html>
