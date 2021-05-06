@@ -1,11 +1,11 @@
-<!-- <style>html {scroll-behavior: smooth;}</style> -->
+<style>html {scroll-behavior: smooth;}</style>
 # **v-grid**
 
 Framework CSS para la creación de layouts responsivos con Grid y Flexbox. Inspirado en Tailwind CSS.
 
-### **Autor:** Víctor Álvarez
+### **Autor:** [Víctor Álvarez](https://vicventum.web.app)
 
-> Ejemplo de uso en index.html
+> Demo en [v-grid](https://vicventum/github.io/v-grid.index.html)
 
 ---
 ## **Tabla de contenidos**
