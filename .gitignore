@@ -1,10 +1,9 @@
 /node_modules
+.vscode/
 style.scss
 tailwindcss.css
-notes.scss
 notes.css
-notes.css.map
 package-lock.json
 package.json
-.vscode/
+TODO.md
 .gitignore
